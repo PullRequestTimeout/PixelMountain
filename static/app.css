@@ -1,0 +1,18 @@
+@font-face {
+	font-family: "Josefin Sans";
+	font-weight: 700;
+	src:
+		url("fonts/JosefinSans-Bold.woff2") format("woff2"),
+		url("fonts/JosefinSans-Bold.woff") format("woff");
+}
+
+/* Variables */
+:root {
+	--color-background: #151515;
+	--color-primary: #0070d5;
+}
+
+html {
+	overflow: hidden;
+	background-color: var(--color-background);
+}
