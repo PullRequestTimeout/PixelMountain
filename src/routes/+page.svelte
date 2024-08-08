@@ -53,7 +53,7 @@
 		</div>
 	</form>
 </main>
-<video muted autoplay loop>
+<video autoplay muted loop playsinline>
 	<source
 		src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4"
 		type="video/mp4"
