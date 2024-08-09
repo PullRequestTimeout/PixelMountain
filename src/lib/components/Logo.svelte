@@ -26,6 +26,7 @@
 	@media (min-width: 768px) {
 		.logo {
 			scale: 2;
+			margin-top: 1.5rem;
 		}
 	}
 

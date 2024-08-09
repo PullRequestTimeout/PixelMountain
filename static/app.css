@@ -10,9 +10,33 @@
 :root {
 	--color-background: #151515;
 	--color-primary: #0070d5;
+	--color-white: #ffffff;
+	--color-dark: #111111;
+	--color-dark2: #313131;
+	--color-light: #dddddd;
 }
 
 html {
-	overflow: hidden;
+	overflow-x: hidden;
 	background-color: var(--color-background);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-light) var(--color-dark2);
+}
+
+*::-webkit-scrollbar {
+	width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+	background-color: var(--color-dark2);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--color-light);
 }

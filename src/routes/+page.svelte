@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Logo from "$lib/components/Logo.svelte";
 </script>
 
@@ -66,35 +66,25 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		height: 100vh;
+		min-height: 100vh;
 		font-family: sans-serif;
-		overflow: hidden;
+		overflow: auto;
+		gap: 1rem;
 	}
 
 	p.coming-soon {
 		font-weight: 700;
 		margin-bottom: 0rem;
 		color: white;
-		margin-bottom: -1rem;
+		margin-top: 2rem;
 	}
 
 	p.blurb {
 		color: white;
 		text-align: center;
 		font-style: italic;
-		margin-top: -2rem;
 		max-width: 15rem;
 		font-weight: 100;
-	}
-
-	@media (min-width: 768px) {
-		p.coming-soon {
-			margin-bottom: 1rem;
-		}
-
-		p.blurb {
-			margin-top: 0rem;
-		}
 	}
 
 	video {
@@ -117,6 +107,7 @@
 		width: 20rem;
 		max-width: calc(100vw - 5rem);
 		backdrop-filter: blur(2px);
+		margin-bottom: 2rem;
 	}
 
 	@media (min-width: 768px) {
