@@ -18,21 +18,14 @@
 
 <style>
 	.logo {
+		position: relative;
 		display: flex;
 		align-items: center;
-		scale: 1;
-	}
-
-	@media (min-width: 768px) {
-		.logo {
-			scale: 2;
-			margin-top: 1.5rem;
-		}
+		color: #fff;
 	}
 
 	div.pixel-container {
 		position: relative;
-		translate: 0 -0.3rem;
 		scale: 0.75;
 	}
 
@@ -100,11 +93,6 @@
 		letter-spacing: -5px;
 		font-size: 3rem;
 		margin-left: 3.7rem;
-	}
-
-	.logo {
-		color: #fff;
-		mix-blend-mode: difference;
 	}
 
 	span {
