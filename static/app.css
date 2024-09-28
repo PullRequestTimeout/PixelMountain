@@ -10,14 +10,24 @@
 :root {
 	--color-background: #151515;
 	--color-primary: #0070d5;
+	--color-primary-dark: #005cb2;
 	--color-white: #ffffff;
+	--color-black: #000000;
 	--color-dark: #111111;
-	--color-dark2: #313131;
+	--color-dark-2: #313131;
 	--color-light: #dddddd;
 
 	--system-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
 		helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 	--mono-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
+@media screen and (min-width: 768px) {
+	:root {
+		--font-size-s: 0.75rem;
+		--font-size-m: 1rem;
+		--font-size-l: 1.25rem;
+	}
 }
 
 /* Globals */
@@ -47,32 +57,97 @@ html {
 	background-color: var(--color-light);
 }
 
+/* All elements except h sytem var font */
+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+	font-family: var(--system-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Josefin Sans";
+}
+
 /* Utilities */
 
-/*
-
 .button {
+	border: none;
+	width: fit-content;
+	border-radius: 2rem;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.25rem 1rem;
+	font-weight: 700;
+	font-size: var(--font-size-m);
+	transition: background-color 0.2s;
 }
 
 .button-primary {
+	background-color: var(--color-primary);
+	color: var(--color-white);
+}
+.button-primary:hover {
+	background-color: var(--color-primary-dark);
 }
 
-.button-primary:hover {
+.button-primary:focus-visible {
+	outline: 1px solid var(--color-white);
 }
 
 .button-secondary {
+	border: 2px solid;
+	background-color: transparent;
 }
 
 .button-secondary:hover {
+	outline: 1px solid white;
+}
+
+.button-secondary:focus-visible {
+	border-color: var(--color-primary);
+	outline: none;
 }
 
 .text-input {
+	color: white;
+	border: 2px solid #fff;
+	background-color: transparent;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+}
+
+.text-input:hover {
+	outline: 1px solid var(--color-white);
 }
 
 .text-input:focus-visible {
+	border-color: var(--color-primary);
+	outline: none;
+}
+
+.heading-font {
+	font-family: "Josefin Sans";
+	font-weight: 700;
+}
+
+.font-black {
+	color: var(--color-black);
+}
+
+.font-white {
+	color: var(--color-white);
 }
 
 .surface {
+	background-color: #313131c9;
+	border-radius: 1rem;
+	box-shadow: 0 2px 0.2rem rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(2px);
+	color: white;
+	padding: 1.5rem;
 }
-
-*/
