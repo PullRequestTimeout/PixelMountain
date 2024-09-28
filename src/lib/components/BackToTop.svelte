@@ -25,5 +25,14 @@
 		bottom: 1rem;
 		cursor: pointer;
 		z-index: 999;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		background-color: var(--color-primary-transparent);
+		backdrop-filter: blur(5px);
 	}
 </style>
