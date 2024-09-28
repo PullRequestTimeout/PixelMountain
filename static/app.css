@@ -11,6 +11,7 @@
 	--color-background: #151515;
 	--color-primary: #0070d5;
 	--color-primary-dark: #005cb2;
+	--color-primary-transparent: #0072d580;
 	--color-white: #ffffff;
 	--color-black: #000000;
 	--color-dark: #111111;
@@ -69,6 +70,19 @@ h4,
 h5,
 h6 {
 	font-family: "Josefin Sans";
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:visited {
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
 }
 
 /* Utilities */
