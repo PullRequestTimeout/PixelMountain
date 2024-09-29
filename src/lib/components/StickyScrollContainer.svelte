@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import { onMount } from "svelte";
 
 	let scrollY = 0;
-	let stickyContainer;
+	let stickyContainer: HTMLDivElement;
 	let containerTop = 0;
 	let containerHeight = 0;
 	let containerBottom = 0;
@@ -56,8 +56,14 @@
 <style>
 	section.scroll-section {
 		position: relative;
-		background-color: transparent;
+		background: linear-gradient(
+			0deg,
+			rgba(21, 21, 21, 1) 80%,
+			rgba(21, 21, 21, 0.8576564414828431) 90%,
+			rgba(21, 21, 21, 0) 100%
+		);
 		height: 200vh;
+		padding: 0;
 	}
 
 	.sticky-container {
@@ -71,5 +77,6 @@
 		justify-content: center;
 		align-items: center;
 		overflow: hidden;
+		opacity: 0;
 	}
 </style>
