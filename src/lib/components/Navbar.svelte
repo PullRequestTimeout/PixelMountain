@@ -243,6 +243,10 @@
 		.navbar {
 			padding: 0 4rem;
 		}
+
+		ul {
+			gap: 2rem;
+		}
 	}
 
 	@media (hover: hover) {
