@@ -8,6 +8,7 @@
 
 /* Variables */
 :root {
+	/* Colors */
 	--color-background: #151515;
 	--color-primary: #0070d5;
 	--color-primary-dark: #005cb2;
@@ -18,16 +19,64 @@
 	--color-dark-2: #313131;
 	--color-light: #dddddd;
 
+	/* Fonts */
 	--system-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
 		helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 	--mono-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+	--heading-font: "Josefin Sans", sans-serif;
+
+	--padding-inline: 1rem;
+
+	/* Font sizes */
+	--font-body-s: 0.75rem;
+	--font-body-m: 1rem;
+	--font-body-l: 1.25rem;
+
+	--font-heading-s: 1.5rem;
+	--font-heading-m: 2rem;
+	--font-heading-l: 2.5rem;
 }
 
 @media screen and (min-width: 768px) {
 	:root {
-		--font-size-s: 0.75rem;
-		--font-size-m: 1rem;
-		--font-size-l: 1.25rem;
+		/* Font sizes */
+		--font-body-s: 1rem;
+		--font-body-m: 1.25rem;
+		--font-body-l: 1.5rem;
+
+		--font-heading-s: 2rem;
+		--font-heading-m: 2.5rem;
+		--font-heading-l: 3rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	:root {
+		/* Padding */
+		--padding-inline: 2rem;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	:root {
+		/* Padding */
+		--padding-inline: 4rem;
+
+		/* Font sizes */
+		--font-body-s: 1.25rem;
+		--font-body-m: 1.5rem;
+		--font-body-l: 1.75rem;
+
+		--font-heading-s: 2.5rem;
+		--font-heading-m: 3rem;
+		--font-heading-l: 3.5rem;
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	:root {
+		/* Padding */
+		--padding-inline: 6rem;
 	}
 }
 
@@ -61,6 +110,7 @@ html {
 /* All elements except h sytem var font */
 *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
 	font-family: var(--system-font);
+	line-height: 1.4;
 }
 
 h1,
@@ -69,7 +119,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Josefin Sans";
+	font-family: var(--heading-font);
+	line-height: 1.2;
 }
 
 a {
@@ -83,6 +134,28 @@ a:visited {
 
 button {
 	cursor: pointer;
+}
+
+section {
+	padding: 4rem 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+	section {
+		padding: 6rem var(--padding-inline);
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	section {
+		padding: 8rem var(--padding-inline);
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	section {
+		padding: 10rem var(--padding-inline);
+	}
 }
 
 /* Utilities */
@@ -105,9 +178,6 @@ button {
 	background-color: var(--color-primary);
 	color: var(--color-white);
 }
-.button-primary:hover {
-	background-color: var(--color-primary-dark);
-}
 
 .button-primary:focus-visible {
 	outline: 1px solid var(--color-white);
@@ -116,10 +186,6 @@ button {
 .button-secondary {
 	border: 2px solid;
 	background-color: transparent;
-}
-
-.button-secondary:hover {
-	outline: 1px solid white;
 }
 
 .button-secondary:focus-visible {
@@ -135,13 +201,24 @@ button {
 	padding: 0.5rem;
 }
 
-.text-input:hover {
-	outline: 1px solid var(--color-white);
-}
-
 .text-input:focus-visible {
 	border-color: var(--color-primary);
 	outline: none;
+}
+
+/* Hover effects */
+@media (hover: hover) {
+	.button-primary:hover {
+		background-color: var(--color-primary-dark);
+	}
+
+	.button-secondary:hover {
+		outline: 1px solid white;
+	}
+
+	.text-input:hover {
+		outline: 1px solid var(--color-white);
+	}
 }
 
 .heading-font {
