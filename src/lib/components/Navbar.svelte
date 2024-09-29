@@ -53,7 +53,7 @@
 				</li>
 				<div class="navbar__divider-line" class:open={isOpen}></div>
 				<li class="navbar__link button button-primary" class:open={isOpen}>
-					<a href="/contact">Contact<Icon name="arrow-right" color="#fff" /></a>
+					<a href="/contact"><span>Contact</span><Icon name="arrow-right" color="#fff" /></a>
 				</li>
 			</ul>
 		{/if}
@@ -79,13 +79,14 @@
 <style>
 	.navbar {
 		position: fixed;
+		z-index: 50;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 0 1rem;
-		background-color: #151515;
+		background-color: #15151548;
 		color: white;
-		backdrop-filter: blur(10px);
+		backdrop-filter: blur(2px);
 		width: 100vw;
 	}
 
@@ -222,7 +223,7 @@
 
 	@media (min-width: 768px) {
 		.navbar {
-			padding: 0 2rem;
+			padding: 0 var(--padding-inline);
 		}
 
 		ul.small-screens {
@@ -241,7 +242,7 @@
 
 	@media (min-width: 1440px) {
 		.navbar {
-			padding: 0 4rem;
+			padding: 0 var(--padding-inline);
 		}
 
 		ul {
