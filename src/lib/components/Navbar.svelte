@@ -105,6 +105,7 @@
 
 	ul li {
 		font-weight: 700;
+		position: relative;
 	}
 
 	ul.big-screens {
@@ -241,6 +242,46 @@
 	@media (min-width: 1440px) {
 		.navbar {
 			padding: 0 4rem;
+		}
+	}
+
+	@media (hover: hover) {
+		.navbar__link:not(:last-child)::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			width: 0;
+			height: 100%;
+			background-color: var(--color-primary-transparent);
+			transition: 0.2s;
+			animation: out 0.2s forwards;
+		}
+
+		.navbar__link:not(:last-child):hover::after {
+			animation: in 0.2s forwards;
+		}
+
+		@keyframes in {
+			from {
+				width: 0;
+				left: 0;
+			}
+			to {
+				left: 0;
+				width: 100%;
+			}
+		}
+
+		@keyframes out {
+			from {
+				width: 100%;
+				right: 0;
+			}
+			to {
+				width: 0;
+				right: 0;
+			}
 		}
 	}
 </style>
