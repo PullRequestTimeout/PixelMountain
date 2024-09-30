@@ -43,12 +43,19 @@
 	@media (min-width: 1024px) {
 		section {
 			gap: 2rem;
+			padding: 0 var(--padding-inline) 6rem var(--padding-inline);
 		}
 
 		a::before {
 			width: 100px;
 			left: -120px;
 			top: -1rem;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		section {
+			padding: 0 var(--padding-inline) 8rem var(--padding-inline);
 		}
 	}
 </style>
