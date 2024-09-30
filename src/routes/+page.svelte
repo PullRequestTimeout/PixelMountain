@@ -121,7 +121,7 @@
 		align-items: center;
 		text-align: center;
 		gap: 1rem;
-		height: 80vh;
+		height: 70svh;
 	}
 
 	div.hero__links {

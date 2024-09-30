@@ -58,9 +58,11 @@
 
 <style>
 	section.embla {
+		margin-top: -2px;
 		position: relative;
 		overflow: hidden;
 		padding: 0;
+		background-color: var(--color-white);
 	}
 
 	div.embla__container {
@@ -111,6 +113,13 @@
 
 		img.embla__slide {
 			flex: 0 0 80%;
+			padding: 0 1rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		img.embla__slide {
+			flex: 0 0 60%;
 			padding: 0 1rem;
 		}
 	}
