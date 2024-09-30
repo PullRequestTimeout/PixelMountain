@@ -2,6 +2,7 @@
 	import Logo from "$lib/components/Logo.svelte";
 	import Icon from "$lib/components/Icon.svelte";
 	import StickyScrollContainer from "$lib/components/StickyScrollContainer.svelte";
+	import Carousel from "$lib/components/Carousel.svelte";
 </script>
 
 <svelte:head>
@@ -78,6 +79,30 @@
 			>Learn More <Icon name="arrow-right" color="#fff"></Icon></a
 		>
 	</section>
+	<section class="about">
+		<div class="about__images">
+			<img src="/assets/images/rossland.jpg" width="100%" alt="rossland from above" />
+			<img src="/assets/images/DSC09910.jpg" alt="jacob snowboarding" />
+			<img src="/assets/images/DSC02102.jpg" alt="old glory mountain" />
+		</div>
+		<div class="about__text">
+			<h3 class="about__text-heading">Explorers, Creators, Innovators</h3>
+			<p class="about__text-body">
+				Pixel Mountain are a boutique creative agency nestled in the mountains of British Columbia.
+				We come from a background of small business and love helping the local community achieve
+				their digital dreams.
+			</p>
+			<a href="/about-us" class="button button-secondary"
+				>About Us<Icon name="arrow-right" color="#000"></Icon></a
+			>
+		</div>
+
+		<h3 class="about__accent-text">Every creation purpose-built to <span>suit your needs</span></h3>
+		<img class="about__wireframe" src="/assets/vectors/wireframe-2.svg" alt="wireframe vector" />
+	</section>
+	<section class="carousel">
+		<Carousel />
+	</section>
 </main>
 
 <style>
@@ -133,8 +158,10 @@
 		z-index: -1;
 		top: 0;
 		right: 0;
+		width: 200%;
 		opacity: 0.1;
 		user-select: none;
+		max-height: 300vh;
 	}
 
 	@keyframes highlight {
@@ -226,5 +253,175 @@
 		.services__item-heading-number {
 			align-self: flex-start;
 		}
+	}
+
+	/* About ------------------------------------------------- */
+
+	.about {
+		background-color: var(--color-white);
+		color: var(--color-black);
+		padding: 0;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.about__images {
+		padding: 0;
+		position: relative;
+		z-index: 1;
+	}
+
+	.about__images img:nth-child(2),
+	.about__images img:nth-child(3) {
+		display: none;
+	}
+
+	.about__text {
+		z-index: 1;
+		padding: 2rem var(--padding-inline);
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.about__text a {
+		margin-top: 1rem;
+	}
+
+	.about__text-heading,
+	.about__accent-text {
+		font-size: var(--font-heading-l);
+	}
+
+	.about__accent-text {
+		text-align: center;
+		padding: 0 var(--padding-inline);
+		margin-bottom: 4rem;
+	}
+
+	.about__accent-text span {
+		background-color: var(--color-primary-transparent);
+	}
+
+	.about__wireframe {
+		position: absolute;
+		width: 70rem;
+		top: -10rem;
+		left: -15rem;
+		user-select: none;
+		opacity: 0.5;
+	}
+
+	@media screen and (min-width: 640px) {
+		.about {
+			padding: 4rem var(--padding-inline);
+		}
+
+		.about__images {
+			display: flex;
+			justify-content: center;
+		}
+
+		.about__images img {
+			height: 17rem;
+			width: 13rem;
+			border-radius: 1rem;
+			object-fit: cover;
+			box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.5);
+		}
+
+		.about__images img:nth-child(1) {
+			translate: 1rem -1rem;
+		}
+
+		.about__images img:nth-child(2),
+		.about__images img:nth-child(3) {
+			display: block;
+		}
+
+		.about__images img:nth-child(2) {
+			translate: 0 0rem;
+		}
+
+		.about__images img:nth-child(3) {
+			translate: -1rem -2rem;
+		}
+
+		.about__text {
+			max-width: 90%;
+			padding: 0;
+			margin: 4rem 0;
+		}
+
+		.about__text p {
+			font-size: var(--font-body-m);
+		}
+
+		.about__accent-text {
+			padding: 0;
+			margin-bottom: 0;
+			padding: 0 10%;
+		}
+
+		.about__wireframe {
+			width: 90rem;
+			top: -20rem;
+			left: -20rem;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.about__images img {
+			height: 20rem;
+			width: 15rem;
+		}
+
+		.about__wireframe {
+			width: 110rem;
+			top: -30rem;
+			left: -30rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		.about {
+			padding: 6rem var(--padding-inline);
+		}
+
+		.about__wireframe {
+			width: 120rem;
+			top: -30rem;
+			left: -30rem;
+		}
+	}
+
+	@media screen and (min-width: 1440px) {
+		.about {
+			padding: 8rem var(--padding-inline);
+		}
+
+		.about__images img {
+			height: 25rem;
+			width: 20rem;
+		}
+
+		.about__wireframe {
+			width: 150rem;
+			top: -40rem;
+			left: -40rem;
+		}
+	}
+
+	@media screen and (min-width: 1536px) {
+		.about {
+			padding: 10rem var(--padding-inline);
+		}
+	}
+
+	/* Carousel ------------------------------------ */
+	.carousel {
+		padding: 0;
+		background-color: var(--color-white);
+		color: var(--color-black);
 	}
 </style>

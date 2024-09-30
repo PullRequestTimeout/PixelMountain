@@ -50,17 +50,24 @@
 	}
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
 	:root {
 		/* Padding */
 		--padding-inline: 2rem;
 	}
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
 	:root {
 		/* Padding */
 		--padding-inline: 4rem;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	:root {
+		/* Padding */
+		--padding-inline: 6rem;
 
 		/* Font sizes */
 		--font-body-s: 1.25rem;
@@ -76,7 +83,7 @@
 @media screen and (min-width: 1536px) {
 	:root {
 		/* Padding */
-		--padding-inline: 6rem;
+		--padding-inline: 8rem;
 	}
 }
 
