@@ -5,9 +5,10 @@
 
 {#if $cookieBanner}
 	<div class="cookie-banner">
-		<Icon name="cookie" color="var(--color-white)" size="48" />
 		<p>This website uses cookies to ensure you get the best experience on our website</p>
-		<button class="button button-primary" on:click={() => cookieBanner.set(false)}>Got it!</button>
+		<button class="button button-primary" on:click={() => cookieBanner.set(false)}
+			>Got it!<Icon name="cookie" color="var(--color-white)" size="24" /></button
+		>
 	</div>
 {/if}
 
