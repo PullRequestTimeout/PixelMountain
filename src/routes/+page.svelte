@@ -161,7 +161,7 @@
 		z-index: -1;
 		top: 0;
 		right: 0;
-		width: 200%;
+		width: 60rem;
 		opacity: 0.1;
 		user-select: none;
 		max-height: 300vh;
@@ -173,6 +173,30 @@
 		}
 		to {
 			width: 100%;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.hero__wireframe {
+			width: 80rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		.hero__wireframe {
+			width: 100rem;
+		}
+	}
+
+	@media screen and (min-width: 1440px) {
+		.hero__wireframe {
+			width: 120rem;
+		}
+	}
+
+	@media screen and (min-width: 1536px) {
+		.hero__wireframe {
+			width: 140rem;
 		}
 	}
 
