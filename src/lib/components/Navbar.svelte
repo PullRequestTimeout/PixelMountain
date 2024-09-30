@@ -136,6 +136,16 @@
 		opacity: 0;
 	}
 
+	ul.small-screens li a {
+		display: flex;
+		gap: 0.25rem;
+		align-items: center;
+	}
+
+	ul li a span {
+		translate: 0 -0.05rem;
+	}
+
 	ul.small-screens li.open,
 	.navbar__divider-line.open {
 		animation: fadeIn 0.2s forwards;
