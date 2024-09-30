@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import Logo from "./Logo.svelte";
 
 	let scrollY = 0;
 	let stickyContainer: HTMLDivElement;
@@ -49,6 +50,10 @@
 		bind:this={stickyContainer}
 		style="opacity: {opacity}; transform: scale({scale})"
 	>
+		<div class="sticky-logo">
+			<Logo />
+			<p>Creative digital agency nestled in the mountains of Beautiful British Columbia</p>
+		</div>
 		<slot></slot>
 	</div>
 </section>
@@ -78,5 +83,34 @@
 		align-items: center;
 		overflow: hidden;
 		opacity: 0;
+		padding: 2rem;
+		overflow: hidden;
+		text-align: center;
+	}
+
+	.sticky-logo p {
+		max-width: 80vw;
+		font-size: var(--font-body-m);
+	}
+
+	.sticky-logo {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		mix-blend-mode: difference;
+	}
+
+	@media (max-width: 350px) {
+		.sticky-logo {
+			scale: 0.75;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.sticky-logo p {
+			max-width: 30rem;
+		}
 	}
 </style>

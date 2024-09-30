@@ -410,6 +410,10 @@
 			top: -30rem;
 			left: -30rem;
 		}
+
+		.about__text {
+			max-width: 60%;
+		}
 	}
 
 	@media screen and (min-width: 1440px) {
