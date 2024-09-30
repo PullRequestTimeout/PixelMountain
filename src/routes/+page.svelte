@@ -1,8 +1,9 @@
 <script lang="ts">
-	import Logo from "$lib/components/Logo.svelte";
 	import Icon from "$lib/components/Icon.svelte";
 	import StickyScrollContainer from "$lib/components/StickyScrollContainer.svelte";
 	import Carousel from "$lib/components/Carousel.svelte";
+	import RecentWork from "$lib/components/RecentWork.svelte";
+	import GetInTouch from "$lib/components/GetInTouch.svelte";
 </script>
 
 <svelte:head>
@@ -103,6 +104,8 @@
 	<section class="carousel">
 		<Carousel />
 	</section>
+	<RecentWork />
+	<GetInTouch />
 </main>
 
 <style>
@@ -174,16 +177,6 @@
 	}
 
 	/* Services-------------------------------------------------------------- */
-
-	.accent-title {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.accent-title img {
-		translate: 0 -0.25rem;
-	}
 
 	.services {
 		display: flex;

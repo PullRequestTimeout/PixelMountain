@@ -1,0 +1,54 @@
+
+    [
+        {
+            "title": "Rooted In Motion",
+            "subtitle": "",
+            "slug": "rooted-in-motion",
+            "cardImage": "/assets/images/blogs/rooted-in-motion-card.jpg",
+            "heroImage": "/assets/images/blogs/rooted-in-motion-hero.jpg",
+            "date": "Jan 2023",
+            "tags": ["Digital Media", "Development"],
+            "content": [
+
+            ],
+            "author": "Jacob Druery",
+            "authorImage": "/assets/images/authors/jacob-druery.jpg",
+            "authorTitle": "Owner, Pixel Mountain Creative",
+            "linkBool" : true,
+            "link": "https://rootedinmotion.ca"
+        },
+        {
+            "title": "Secret Spots",
+            "subtitle": "",
+            "slug": "secret-spots",
+            "cardImage": "/assets/images/blogs/secret-spots-card.jpg",
+            "heroImage": "/assets/images/blogs/secret-spots-hero.jpg",
+            "date": "Jan 2024",
+            "tags": ["UI/UX Design", "Development"],
+            "content": [
+
+            ],
+            "author": "Jacob Druery",
+            "authorImage": "/assets/images/authors/jacob-druery.jpg",
+            "authorTitle": "Owner, Pixel Mountain Creative",
+            "linkBool" : true,
+            "link": "https://secretspots.app"
+        },
+        {
+            "title": "What are Core Web Vitals?",
+            "subtitle": "And how do they impact your business?",
+            "slug": "what-are-core-web-vitals",
+            "cardImage": "/assets/images/blogs/what-are-core-web-vitals-card.jpg",
+            "heroImage": "/assets/images/blogs/what-are-core-web-vitals-hero.jpg",
+            "date": "Sep 2024",
+            "tags": ["Development", "Business Technology"],
+            "content": [
+                    
+                ],
+            "author": "Jacob Druery",
+            "authorImage": "/assets/images/authors/jacob-druery.jpg",
+            "authorTitle": "Owner, Pixel Mountain Creative",
+            "linkBool" : false,
+            "link": ""
+        }
+    ]

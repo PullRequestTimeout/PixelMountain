@@ -147,6 +147,12 @@ section {
 	padding: 4rem 1rem;
 }
 
+@media screen and (min-width: 768px) {
+	section {
+		padding: 4rem var(--padding-inline);
+	}
+}
+
 @media screen and (min-width: 1024px) {
 	section {
 		padding: 6rem var(--padding-inline);
@@ -198,6 +204,17 @@ section {
 .button-secondary:focus-visible {
 	border-color: var(--color-primary);
 	outline: none;
+}
+
+.accent-title {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: var(--font-body-s);
+}
+
+.accent-title img {
+	translate: 0 -0.25rem;
 }
 
 .text-input {
