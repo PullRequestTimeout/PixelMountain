@@ -32,9 +32,9 @@
 
 {#if scrolling}
 	<nav class="navbar" transition:slide={{ duration: 300, axis: "y" }}>
-		<div class="navbar__logo">
+		<a href="/" class="navbar__logo">
 			<Logo />
-		</div>
+		</a>
 		<button aria-label="menu button" on:click={handleMenu} class="hamburger btn-green">
 			<div class:active={isOpen} />
 		</button>
