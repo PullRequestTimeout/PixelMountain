@@ -187,6 +187,7 @@
 
 	.contact .text-input {
 		margin-bottom: 0.75rem;
+		font-size: var(--font-body-s);
 	}
 
 	.contact form .button-secondary {
@@ -199,6 +200,11 @@
 		left: -40rem;
 		width: 80rem;
 		opacity: 0.35;
+	}
+
+	.map {
+		padding: 0;
+		height: 25rem;
 	}
 
 	@media screen and (min-width: 640px) {
@@ -247,16 +253,19 @@
 		.contact form {
 			width: 50%;
 		}
+
+		.map {
+			height: 30rem;
+		}
 	}
 
 	@media screen and (min-width: 1440px) {
 		.contact {
 			gap: 6rem;
 		}
-	}
 
-	.map {
-		padding: 0;
-		height: 35rem;
+		.map {
+			height: 35rem;
+		}
 	}
 </style>
