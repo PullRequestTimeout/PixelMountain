@@ -1,5 +1,6 @@
 <script>
 	import Icon from "$lib/components/Icon.svelte";
+	import Map from "$lib/components/Map.svelte";
 </script>
 
 <svelte:head>
@@ -87,7 +88,9 @@
 	</form>
 	<img class="contact__wireframe" src="/assets/vectors/wireframe-4.svg" alt="wireframe vector" />
 </section>
-<section id="map" class="map"><h2>MAP</h2></section>
+<section id="map" class="map">
+	<Map />
+</section>
 
 <style>
 	.hero {
@@ -169,8 +172,7 @@
 		}
 	}
 
-	.contact__links a,
-	.contact__links p {
+	.contact__links a {
 		font-size: var(--font-body-m);
 		font-weight: bold;
 	}
@@ -253,10 +255,8 @@
 		}
 	}
 
-	/* Map ------------------------------ */
 	.map {
-		border: 2px solid var(--color-white);
-		color: var(--color-white);
-		text-align: center;
+		padding: 0;
+		height: 35rem;
 	}
 </style>

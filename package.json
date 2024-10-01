@@ -26,6 +26,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@googlemaps/js-api-loader": "^1.16.8",
 		"embla-carousel-autoplay": "^8.3.0",
 		"embla-carousel-class-names": "^8.3.0",
 		"embla-carousel-svelte": "^8.3.0",

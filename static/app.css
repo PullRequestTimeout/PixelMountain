@@ -271,3 +271,27 @@ footer {
 	color: white;
 	padding: 1.5rem;
 }
+
+/* Google maps link removal */
+
+a[href^="http://maps.google.com/maps"]
+{
+	display: none !important;
+}
+a[href^="https://maps.google.com/maps"]
+{
+	display: none !important;
+}
+
+.gmnoprint a,
+.gmnoprint span,
+.gm-style-cc {
+	display: none;
+}
+.gmnoprint div {
+	background: none !important;
+}
+
+.gm-style iframe + div {
+	border: none !important;
+}
