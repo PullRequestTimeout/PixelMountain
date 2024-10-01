@@ -206,6 +206,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		background-color: var(--color-background);
 	}
 
 	.services__divider {
