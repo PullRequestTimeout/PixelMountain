@@ -67,7 +67,8 @@
 			rgba(21, 21, 21, 0.8576564414828431) 90%,
 			rgba(21, 21, 21, 0) 100%
 		);
-		height: 200vh;
+		/* Change height to lengthen sticky scroll */
+		height: 100vh;
 		padding: 0;
 	}
 
@@ -91,6 +92,8 @@
 	.sticky-logo p {
 		max-width: 80vw;
 		font-size: var(--font-body-m);
+		color: var(--color-white);
+		z-index: 1;
 	}
 
 	.sticky-logo {
@@ -111,6 +114,12 @@
 	@media (min-width: 1024px) {
 		.sticky-logo p {
 			max-width: 30rem;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.sticky-logo {
+			scale: 1.5;
 		}
 	}
 </style>

@@ -18,6 +18,11 @@
 		font-size: var(--font-heading-l);
 	}
 
+	h2,
+	a {
+		color: var(--color-white);
+	}
+
 	a {
 		position: relative;
 	}
