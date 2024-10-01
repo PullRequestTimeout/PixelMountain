@@ -16,7 +16,7 @@
 <main>
 	<section>
 		<div class="hero__text">
-			<h2><span>Simplifying</span> your digital experience</h2>
+			<h2><span class="highlight">Simplifying</span> your digital experience</h2>
 			<p>We look after <em>every pixel</em> of your digital presence, so you don't have to</p>
 			<div class="hero__links">
 				<a href="/services" class="button button-secondary">Learn More</a>
@@ -141,22 +141,6 @@
 		font-size: var(--font-body-m);
 	}
 
-	.hero__text h2 span {
-		position: relative;
-	}
-
-	.hero__text h2 span::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 0;
-		height: 100%;
-		z-index: -1;
-		background-color: var(--color-primary-transparent);
-		animation: highlight 0.4s ease-in-out forwards 1s;
-	}
-
 	.hero__wireframe {
 		position: absolute;
 		z-index: -1;
@@ -166,15 +150,6 @@
 		opacity: 0.1;
 		user-select: none;
 		max-height: 300vh;
-	}
-
-	@keyframes highlight {
-		from {
-			width: 0;
-		}
-		to {
-			width: 100%;
-		}
 	}
 
 	@media screen and (min-width: 768px) {

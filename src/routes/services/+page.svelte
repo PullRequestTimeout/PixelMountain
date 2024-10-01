@@ -21,7 +21,7 @@
 <main>
 	<section class="hero">
 		<div class="hero__text">
-			<h2>Every creation <span>purpose-built</span> to suit your needs</h2>
+			<h2>Every creation <span class="highlight">purpose-built</span> to suit your needs</h2>
 			<p>
 				Personalized websites, eCommerce solutions, and multimedia designed to captivate and engage
 				your audience.
@@ -274,32 +274,6 @@
 
 	.hero__text p {
 		font-size: var(--font-body-m);
-	}
-
-	.hero__text h2 span {
-		position: relative;
-		white-space: nowrap;
-	}
-
-	.hero__text h2 span::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 0;
-		height: 100%;
-		z-index: -1;
-		background-color: var(--color-primary-transparent);
-		animation: highlight 0.4s ease-in-out forwards 1s;
-	}
-
-	@keyframes highlight {
-		from {
-			width: 0;
-		}
-		to {
-			width: 100%;
-		}
 	}
 
 	.hero img {
