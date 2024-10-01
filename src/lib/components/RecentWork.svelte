@@ -1,6 +1,9 @@
 <script lang="ts">
 	import blogs from "$lib/data/blogs.json";
 	import Icon from "$lib/components/Icon.svelte";
+
+	// Only get the first 3 blog posts
+	$: firstThreeBlogs = blogs.slice(0, 3);
 </script>
 
 <section class="recent-works">
@@ -9,7 +12,7 @@
 		<h2>What We've Been Up To</h2>
 	</div>
 	<div class="recent-works__container">
-		{#each blogs as blog, i}
+		{#each firstThreeBlogs as blog, i}
 			<a href={`/blog/${blog.slug}`} id={`recent-works__item-${i}`}>
 				<div class="recent-works__item">
 					<img src={blog.cardImage} alt={`${blog.title} image`} />
