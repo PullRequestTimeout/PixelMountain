@@ -3,7 +3,6 @@
 	import StickyScrollContainer from "$lib/components/StickyScrollContainer.svelte";
 	import RecentWork from "$lib/components/RecentWork.svelte";
 	import GetInTouch from "$lib/components/GetInTouch.svelte";
-	import { fade } from "svelte/transition";
 
 	type TabType = "landing-page" | "e-commerce" | "multimedia";
 	let currentTab: TabType = "landing-page";
@@ -245,6 +244,7 @@
 			loop
 			muted
 			autoplay
+			playsinline
 		></video>
 	</StickyScrollContainer>
 	<RecentWork />

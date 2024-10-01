@@ -33,6 +33,7 @@
 			loop
 			muted
 			autoplay
+			playsinline
 		></video>
 	</StickyScrollContainer>
 	<section class="services">
