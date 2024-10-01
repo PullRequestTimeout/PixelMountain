@@ -41,19 +41,21 @@
 		{#if isOpen}
 			<ul transition:slide={{ duration: 400, axis: "x" }} class="navbar__link-list small-screens">
 				<li class="navbar__link" class:open={isOpen}>
-					<a href="/services">Services</a>
+					<a href="/services" on:click={handleMenu}>Services</a>
 				</li>
 				<div class="navbar__divider-line" class:open={isOpen}></div>
 				<li class="navbar__link" class:open={isOpen}>
-					<a href="/our-work">Our&nbsp;Work</a>
+					<a href="/our-work" on:click={handleMenu}>Our&nbsp;Work</a>
 				</li>
 				<div class="navbar__divider-line" class:open={isOpen}></div>
 				<li class="navbar__link" class:open={isOpen}>
-					<a href="/about">About&nbsp;Us</a>
+					<a href="/about" on:click={handleMenu}>About&nbsp;Us</a>
 				</li>
 				<div class="navbar__divider-line" class:open={isOpen}></div>
 				<li class="navbar__link button button-primary" class:open={isOpen}>
-					<a href="/contact"><span>Contact</span><Icon name="arrow-right" color="#fff" /></a>
+					<a href="/contact" on:click={handleMenu}
+						><span>Contact</span><Icon name="arrow-right" color="#fff" /></a
+					>
 				</li>
 			</ul>
 		{/if}
