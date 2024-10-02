@@ -1,5 +1,6 @@
 <script lang="ts">
 	import StickyScrollContainer from "$lib/components/StickyScrollContainer.svelte";
+	import AboutImageScroller from "$lib/components/AboutImageScroller.svelte";
 	import GetInTouch from "$lib/components/GetInTouch.svelte";
 </script>
 
@@ -11,7 +12,7 @@
 </svelte:head>
 
 <main>
-	<section class="hero">
+	<section class="hero hero--top-pad">
 		<div class="hero__text">
 			<h2>
 				We're a boutique digital agency in the mountains of <span class="highlight"
@@ -54,8 +55,7 @@
 			</div>
 		</div>
 	</section>
-
-	<section class="image-scroller"></section>
+	<AboutImageScroller />
 	<section class="hero">
 		<div class="hero__text">
 			<h2>
@@ -148,8 +148,11 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding-top: 30svh;
 		text-align: center;
+	}
+
+	.hero--top-pad {
+		padding-top: 30svh;
 	}
 
 	.hero__text {
@@ -219,7 +222,6 @@
 		}
 	}
 
-	/* Image Scroller -------------------------------- */
 	/* Why Us ---------------------------------------- */
 	.why-us {
 		position: relative;
@@ -316,7 +318,6 @@
 	}
 
 	.the-team__image-container img {
-		filter: grayscale(100%);
 		width: auto;
 		height: auto;
 		max-width: 15rem;
