@@ -142,12 +142,6 @@
 		max-width: 18rem;
 	}
 
-	@media screen and (max-width: 375px) {
-		.hero h2 {
-			font-size: var(--font-heading-m);
-		}
-	}
-
 	@media screen and (min-width: 640px) {
 		.featured-work__text {
 			gap: 2rem;
