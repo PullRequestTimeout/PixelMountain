@@ -35,7 +35,7 @@
 </svelte:head>
 
 <main>
-	<section class="hero">
+	<section class="hero hero--top-pad">
 		<h2>
 			We take pride in every one of our creations being a <span class="highlight"
 				>polished product</span
@@ -101,7 +101,11 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 60svh;
+		/* height: 60svh; */
+	}
+
+	.hero--top-pad {
+		padding-top: 30svh;
 	}
 
 	.hero h2 {
