@@ -98,6 +98,7 @@
 html {
 	overflow-x: hidden;
 	background-color: var(--color-background);
+	scroll-behavior: smooth;
 }
 
 * {
@@ -172,13 +173,6 @@ footer {
 	section,
 	footer {
 		padding: 8rem var(--padding-inline);
-	}
-}
-
-@media screen and (min-width: 1536px) {
-	section,
-	footer {
-		padding: 10rem var(--padding-inline);
 	}
 }
 
