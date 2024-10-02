@@ -1,6 +1,301 @@
+<script lang="ts">
+	import StickyScrollContainer from "$lib/components/StickyScrollContainer.svelte";
+	import GetInTouch from "$lib/components/GetInTouch.svelte";
+</script>
+
 <svelte:head>
 	<title
 		>About Us | Pixel Mountain Creative - Boutique digital agency nestled in the mountains of
 		Beautiful British Columbia</title
 	>
 </svelte:head>
+
+<main>
+	<section class="hero">
+		<div class="hero__text">
+			<h2>
+				We're a boutique digital agency in the mountains of <span class="highlight"
+					>British Columbia</span
+				>
+			</h2>
+			<p>
+				At Pixel Mountain Creative we're dedicated to creating an engaging, polished online presence
+				for your business
+			</p>
+		</div>
+	</section>
+	<StickyScrollContainer>
+		<video
+			src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4"
+			loop
+			muted
+			autoplay
+			playsinline
+		></video>
+	</StickyScrollContainer>
+	<section class="who-we-are">
+		<div class="accent-title">
+			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+			<h2>Who We Are</h2>
+		</div>
+		<div class="who-we-are__text">
+			<h3>We are creative collective with a passion for crafting engaging digital experiences</h3>
+			<div class="who-we-are__paragraphs">
+				<p>
+					Pixel Mountain Creative was founded by a passionate programmer, photographer, and designer
+					aiming to create a one-stop shop for businesses looking to elevate their digital presence.
+				</p>
+				<p>
+					We are a small boutique agency that can almost always see a digital project through from
+					concept to completion in-house, but if anything is a little outside our wheelhouse we have
+					a large network of local creative professionals at our disposal to make sure our creation
+					is everything you need.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="image-scroller"></section>
+	<section class="hero">
+		<div class="hero__text">
+			<h2>
+				Every creation purpose-built to <span class="highlight">suit your needs </span>
+			</h2>
+			<p>We take great pride in the meticulous attention to detail in all of our work</p>
+		</div>
+	</section>
+	<section class="why-us">
+		<div class="accent-title">
+			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+			<h2>Why Us?</h2>
+		</div>
+		<div class="why-us__container">
+			<div class="why-us__text">
+				<h3>Uncompromising Quality</h3>
+				<p>
+					We are committed to delivering top-notch digital solutions that exceed your expectations,
+					ensuring every project is crafted to perfection.
+				</p>
+			</div>
+			<div class="why-us__text">
+				<h3>Comprehensive Management</h3>
+				<p>
+					Our approach goes beyond one-time projects; we offer ongoing support and management to
+					keep your digital presence thriving.
+				</p>
+			</div>
+			<div class="why-us__text">
+				<h3>In-House Expertise</h3>
+				<p>
+					From web development to photography, our team handles every aspect of your project
+					in-house, guaranteeing seamless integration and a cohesive final product.
+				</p>
+			</div>
+			<div class="why-us__text">
+				<h3>Client-Centric Approach</h3>
+				<p>
+					Your satisfaction is our priority. We tailor our services to meet your specific needs,
+					ensuring a personalized and effective digital strategy.
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="the-team">
+		<div class="accent-title">
+			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+			<h2>The Team</h2>
+		</div>
+		<div class="the-team__container">
+			<p>
+				Pixel Mountain is a boutique agency with a small, dedicated team, and we take pride in
+				overseeing every project from start to finish personally. If your projects require more
+				specialized services than our team currently has available, our expansive auxiliary network
+				of creative professionals is available to take your creation to the next level.
+			</p>
+			<div class="the-team__image-container">
+				<img
+					src="/assets/images/jacob-snowboarding-circle.png"
+					alt="jacob snowboarding"
+					width="1000"
+					height="1000"
+				/>
+			</div>
+		</div>
+	</section>
+	<GetInTouch />
+</main>
+
+<style>
+	/* Hero ------------------------------------------ */
+	* {
+		color: var(--color-white);
+	}
+
+	.hero {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 30svh;
+		text-align: center;
+	}
+
+	.hero__text {
+		max-width: 45rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.hero__text h2 {
+		font-size: var(--font-heading-l);
+	}
+
+	.hero__text p {
+		font-size: var(--font-body-m);
+	}
+
+	@media screen and (min-width: 1440px) {
+		.hero__text {
+			max-width: 60rem;
+		}
+
+		.hero__text p {
+			max-width: 45rem;
+		}
+	}
+
+	/* Who We Are */
+
+	.who-we-are,
+	.who-we-are__text,
+	.who-we-are__paragraphs {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.who-we-are__text h3 {
+		font-size: var(--font-heading-m);
+	}
+
+	.who-we-are__text p {
+		font-size: var(--font-body-m);
+	}
+
+	@media screen and (min-width: 768px) {
+		.who-we-are__text,
+		.who-we-are__paragraphs {
+			gap: 2rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		.who-we-are__text {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+		}
+
+		.who-we-are__text h3 {
+			font-size: var(--font-heading-l);
+		}
+	}
+
+	@media screen and (min-width: 1440px) {
+		.who-we-are__text {
+			gap: 6rem;
+		}
+	}
+
+	/* Image Scroller -------------------------------- */
+	/* Why Us ---------------------------------------- */
+	.why-us .accent-title {
+		margin-bottom: 1rem;
+	}
+
+	.why-us__container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.why-us__text {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.why-us__text h3 {
+		font-size: var(--font-heading-l);
+	}
+	.why-us__text p {
+		font-size: var(--font-body-m);
+	}
+
+	@media screen and (min-width: 1024px) {
+		.why-us__container {
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+		}
+	}
+
+	@media screen and (min-width: 1440px) {
+		.why-us__container {
+			gap: 6rem;
+		}
+	}
+
+	/* The Team -------------------------------------- */
+
+	.the-team,
+	.the-team__container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.the-team__container P {
+		font-size: var(--font-body-m);
+	}
+
+	.the-team__image-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.the-team__image-container img {
+		filter: grayscale(100%);
+		width: auto;
+		height: auto;
+		max-width: 15rem;
+	}
+
+	@media screen and (min-width: 640px) {
+		.the-team__container {
+			gap: 2rem;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.the-team__image-container img {
+			max-width: 20rem;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		.the-team__container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+		}
+
+		.the-team__image-container {
+			translate: 0 -4rem;
+		}
+	}
+
+	@media screen and (min-width: 1440px) {
+		.the-team__container {
+			gap: 6rem;
+		}
+	}
+</style>
