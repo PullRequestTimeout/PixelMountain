@@ -110,6 +110,7 @@
 		height: 100%;
 		object-fit: cover;
 		rotate: 180deg;
+		filter: grayscale(100%);
 	}
 
 	.hero h2 {
