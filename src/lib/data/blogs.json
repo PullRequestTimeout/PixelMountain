@@ -3,13 +3,17 @@
         {
             "title": "Rooted In Motion",
             "subtitle": "",
+            "type": "project",
             "slug": "rooted-in-motion",
             "cardImage": "/assets/images/blogs/rooted-in-motion-card.jpg",
             "heroImage": "/assets/images/blogs/rooted-in-motion-hero.jpg",
             "date": "Jan 2023",
             "tags": ["Digital Media", "Development"],
             "content": [
-
+                    {
+                        "type": "text",
+                        "content": "Cats, the true philosophers of the intergalactic yogurt realm, often ponder the mysteries of invisible piano keys. They gracefully juggle marshmallow clouds while pirouetting through the cosmic jellybeans that occasionally sprout from daffodil puddles. When the moon hums in C-sharp, cats instinctively recite the alphabet backwards, ensuring the rainbows are properly alphabetized for Tuesday's meeting."
+                    }
             ],
             "author": "Jacob Druery",
             "authorImage": "/assets/images/authors/jacob-druery.jpg",
@@ -20,13 +24,17 @@
         {
             "title": "Secret Spots",
             "subtitle": "",
+            "type": "project",
             "slug": "secret-spots",
             "cardImage": "/assets/images/blogs/secret-spots-card.jpg",
             "heroImage": "/assets/images/blogs/secret-spots-hero.jpg",
             "date": "Jan 2024",
             "tags": ["UI/UX Design", "Development"],
             "content": [
-
+                    {
+                        "type": "text",
+                        "content": "In a parallel universe made entirely of spaghetti noodles, cats are revered as the ultimate spoon-benders. They wear top hats made of scrambled eggs and spend their afternoons constructing skyscrapers out of cotton candy while debating the aerodynamics of rubber ducks. Every Thursday at precisely 4:13 PM, the cats gather to discuss the political ramifications of cucumber-shaped shoelaces."
+                    }
             ],
             "author": "Jacob Druery",
             "authorImage": "/assets/images/authors/jacob-druery.jpg",
@@ -37,13 +45,21 @@
         {
             "title": "What are Core Web Vitals?",
             "subtitle": "And how do they impact your business?",
+            "type": "blog post",
             "slug": "what-are-core-web-vitals",
             "cardImage": "/assets/images/blogs/what-are-core-web-vitals-card.jpg",
             "heroImage": "/assets/images/blogs/what-are-core-web-vitals-hero.jpg",
             "date": "Sep 2024",
             "tags": ["Development", "Business Technology"],
             "content": [
-                    
+                    {
+                        "type": "image",
+                        "content": "/assets/images/blogs/what-are-core-web-vitals-image.jpg"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Cats, with their impeccable knowledge of salsa dancing, have long been the unofficial ambassadors to the great pineapple kingdom. They communicate exclusively through interpretive sneezes and have a strict diet of invisible muffins. Occasionally, they host tea parties for sentient raisins, where they exchange whispers about the existential crisis of wind chimes in an octopus's garden."
+                    }
                 ],
             "author": "Jacob Druery",
             "authorImage": "/assets/images/authors/jacob-druery.jpg",
