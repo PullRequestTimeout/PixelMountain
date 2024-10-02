@@ -49,7 +49,7 @@
 				</li>
 				<div class="navbar__divider-line" class:open={isOpen}></div>
 				<li class="navbar__link" class:open={isOpen}>
-					<a href="/about" on:click={handleMenu}>About&nbsp;Us</a>
+					<a href="/about-us" on:click={handleMenu}>About&nbsp;Us</a>
 				</li>
 				<div class="navbar__divider-line" class:open={isOpen}></div>
 				<li class="navbar__link button button-primary" class:open={isOpen}>
