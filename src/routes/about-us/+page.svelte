@@ -99,6 +99,18 @@
 				</p>
 			</div>
 		</div>
+		<div class="why-us__wireframe-container">
+			<img
+				class="why-us__wireframe-1"
+				src="/assets/vectors/wireframe-5.svg"
+				alt="wireframe vector"
+			/>
+			<img
+				class="why-us__wireframe-2"
+				src="/assets/vectors/wireframe-6.svg"
+				alt="wireframe vector"
+			/>
+		</div>
 	</section>
 	<section class="the-team">
 		<div class="accent-title">
@@ -127,6 +139,7 @@
 
 <style>
 	/* Hero ------------------------------------------ */
+
 	* {
 		color: var(--color-white);
 	}
@@ -208,6 +221,11 @@
 
 	/* Image Scroller -------------------------------- */
 	/* Why Us ---------------------------------------- */
+	.why-us {
+		position: relative;
+		padding: 0 var(--padding-inline);
+	}
+
 	.why-us .accent-title {
 		margin-bottom: 1rem;
 	}
@@ -231,10 +249,45 @@
 		font-size: var(--font-body-m);
 	}
 
+	.why-us__wireframe-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: 100vw;
+		overflow: hidden;
+		border: 1;
+	}
+
+	.why-us__wireframe-1,
+	.why-us__wireframe-2 {
+		top: 0;
+		left: 0;
+		height: 70rem;
+		opacity: 0.35;
+	}
+
+	.why-us__wireframe-2 {
+		display: none;
+	}
+
 	@media screen and (min-width: 1024px) {
 		.why-us__container {
 			grid-template-columns: 1fr 1fr;
 			gap: 4rem;
+		}
+
+		.why-us__wireframe-1 {
+			display: none;
+		}
+
+		.why-us__wireframe-container {
+			translate: 0 -20rem;
+		}
+
+		.why-us__wireframe-2 {
+			display: block;
+			height: 100rem;
+			width: 100vw;
 		}
 	}
 
