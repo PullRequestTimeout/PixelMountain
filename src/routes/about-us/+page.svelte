@@ -2,6 +2,7 @@
 	import StickyScrollContainer from "$lib/components/StickyScrollContainer.svelte";
 	import AboutImageScroller from "$lib/components/AboutImageScroller.svelte";
 	import GetInTouch from "$lib/components/GetInTouch.svelte";
+	import ScrollProps from "$lib/components/ScrollProps.svelte";
 </script>
 
 <svelte:head>
@@ -35,10 +36,12 @@
 		></video>
 	</StickyScrollContainer>
 	<section class="who-we-are">
-		<div class="accent-title">
-			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-			<h2>Who We Are</h2>
-		</div>
+		<ScrollProps let:props className="show" threshold={1} once={true}>
+			<div class="accent-title {props.class}">
+				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+				<h2>Who We Are</h2>
+			</div>
+		</ScrollProps>
 		<div class="who-we-are__text">
 			<h3>We are creative collective with a passion for crafting engaging digital experiences</h3>
 			<div class="who-we-are__paragraphs">
@@ -65,10 +68,12 @@
 		</div>
 	</section>
 	<section class="why-us">
-		<div class="accent-title">
-			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-			<h2>Why Us?</h2>
-		</div>
+		<ScrollProps let:props className="show" threshold={1} once={true}>
+			<div class="accent-title {props.class}">
+				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+				<h2>Why Us?</h2>
+			</div>
+		</ScrollProps>
 		<div class="why-us__container">
 			<div class="why-us__text">
 				<h3>Uncompromising Quality</h3>
@@ -113,10 +118,12 @@
 		</div>
 	</section>
 	<section class="the-team">
-		<div class="accent-title">
-			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-			<h2>The Team</h2>
-		</div>
+		<ScrollProps let:props className="show" threshold={1} once={true}>
+			<div class="accent-title {props.class}">
+				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+				<h2>The Team</h2>
+			</div>
+		</ScrollProps>
 		<div class="the-team__container">
 			<p>
 				Pixel Mountain is a boutique agency with a small, dedicated team, and we take pride in

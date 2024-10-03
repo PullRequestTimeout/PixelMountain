@@ -98,6 +98,9 @@
 html {
 	overflow-x: hidden;
 	background-color: var(--color-background);
+}
+
+.smoothscroll {
 	scroll-behavior: smooth;
 }
 
@@ -216,6 +219,14 @@ footer {
 	align-items: center;
 	gap: 0.5rem;
 	font-size: var(--font-body-s);
+	opacity: 0;
+	transform: translateX(-2rem);
+	transition: 0.5s ease-in-out;
+}
+
+.accent-title.show {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 .accent-title img {

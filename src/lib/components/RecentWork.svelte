@@ -1,16 +1,19 @@
 <script lang="ts">
 	import blogs from "$lib/data/blogs.json";
 	import Icon from "$lib/components/Icon.svelte";
+	import ScrollProps from "$lib/components/ScrollProps.svelte";
 
 	// Only get the first 3 blog posts
 	$: firstThreeBlogs = blogs.slice(0, 3);
 </script>
 
 <section class="recent-works">
-	<div class="accent-title">
-		<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-		<h2>What We've Been Up To</h2>
-	</div>
+	<ScrollProps let:props className="show" threshold={1} once={true}>
+		<div class="accent-title {props.class}">
+			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+			<h2>What We've Been Up To</h2>
+		</div>
+	</ScrollProps>
 	<div class="recent-works__container">
 		{#each firstThreeBlogs as blog, i}
 			<a href={`/blog/${blog.slug}`} id={`recent-works__item-${i}`}>

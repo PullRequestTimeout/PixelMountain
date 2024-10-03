@@ -4,6 +4,7 @@
 	import Carousel from "$lib/components/Carousel.svelte";
 	import RecentWork from "$lib/components/RecentWork.svelte";
 	import GetInTouch from "$lib/components/GetInTouch.svelte";
+	import ScrollProps from "$lib/components/ScrollProps.svelte";
 </script>
 
 <svelte:head>
@@ -37,10 +38,12 @@
 		></video>
 	</StickyScrollContainer>
 	<section class="services">
-		<div class="accent-title">
-			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-			<h2>What We Do</h2>
-		</div>
+		<ScrollProps let:props className="show" threshold={1} once={true}>
+			<div class="accent-title {props.class}">
+				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+				<h2>What We Do</h2>
+			</div>
+		</ScrollProps>
 		<div class="services__item">
 			<div class="services__item-heading">
 				<h3>UI/UX Design</h3>
@@ -52,7 +55,9 @@
 				conversion rates and revenue. All ongoing maintenance included.
 			</p>
 		</div>
-		<div class="services__divider"></div>
+		<ScrollProps let:props className="show" threshold={1} once={true}>
+			<div class="services__divider {props.class}"></div>
+		</ScrollProps>
 		<div class="services__item">
 			<div class="services__item-heading">
 				<h3>Development</h3>
@@ -63,7 +68,9 @@
 				access to full suite of analytics designed to give your business the tools you need to grow.
 			</p>
 		</div>
-		<div class="services__divider"></div>
+		<ScrollProps let:props className="show" threshold={1} once={true}>
+			<div class="services__divider {props.class}"></div>
+		</ScrollProps>
 		<div class="services__item">
 			<div class="services__item-heading">
 				<h3>Multimedia</h3>
@@ -76,7 +83,9 @@
 				strategy, ensuring consistency and enhancing your brand's presence across all platforms.
 			</p>
 		</div>
-		<div class="services__divider"></div>
+		<ScrollProps let:props className="show" threshold={1} once={true}>
+			<div class="services__divider {props.class}"></div>
+		</ScrollProps>
 		<a href="/services" class="services__link button button-secondary"
 			>Learn More <Icon name="arrow-right" color="#fff"></Icon></a
 		>
@@ -186,8 +195,13 @@
 	}
 
 	.services__divider {
-		width: 100%;
+		width: 0;
 		border-bottom: 2px solid var(--color-white);
+		transition: 1s ease-in-out;
+	}
+
+	.services__divider.show {
+		width: 100%;
 	}
 
 	.services__item {

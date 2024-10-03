@@ -2,6 +2,7 @@
 	import Icon from "$lib/components/Icon.svelte";
 	import GetInTouch from "$lib/components/GetInTouch.svelte";
 	import blogs from "$lib/data/blogs.json";
+	import ScrollProps from "$lib/components/ScrollProps.svelte";
 
 	// Return the first 100 characters of the first "text" content item from a blog post to use as an excerpt
 	type ContentItem = {
@@ -68,10 +69,12 @@
 		</div>
 	</section>
 	<section class="recent-work">
-		<div class="accent-title">
-			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-			<h2>Some More Of Our Work</h2>
-		</div>
+		<ScrollProps let:props className="show" threshold={1} once={true}>
+			<div class="accent-title {props.class}">
+				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+				<h2>Some More Of Our Work</h2>
+			</div>
+		</ScrollProps>
 		<div class="recent-work__card-container">
 			{#each blogs as blog}
 				<div class="recent-work__card">
