@@ -160,6 +160,7 @@
 
 	.hero--top-pad {
 		padding-top: 30svh;
+		padding-top: calc(var(--js-vh) * 0.3);
 	}
 
 	.hero__text {

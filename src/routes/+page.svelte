@@ -132,6 +132,7 @@
 		text-align: center;
 		gap: 1rem;
 		height: 70svh;
+		height: calc(var(--js-vh) * 0.7);
 	}
 
 	div.hero__links {
