@@ -55,3 +55,16 @@
 	<Icon name="arrow-up" color="#fff" size="32" />
 </BackToTop>
 <CookieBanner />
+<p>Viewheight: {vh}px</p>
+
+<style>
+	p {
+		position: fixed;
+		top: 0;
+		right: 0;
+		background: var(--color-black);
+		color: var(--color-white);
+		padding: 1rem;
+		z-index: 1000;
+	}
+</style>
