@@ -103,12 +103,12 @@
 		background-color: #15151548;
 		color: white;
 		width: 100vw;
-		transition: 0.2s;
+		transition: 0.5s;
 	}
 
 	.navbar.scroll {
 		backdrop-filter: blur(5px);
-		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 	}
 
 	.navbar__logo {
