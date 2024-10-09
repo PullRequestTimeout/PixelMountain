@@ -257,7 +257,6 @@
 		justify-content: center;
 		align-items: center;
 		padding-top: 30svh;
-		padding-top: calc(var(--js-vh) * 0.3);
 		color: var(--color-white);
 		text-align: center;
 	}

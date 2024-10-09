@@ -43,7 +43,6 @@
 		justify-content: center;
 		align-items: center;
 		height: 100svh;
-		height: var(--js-vh);
 		text-align: center;
 	}
 

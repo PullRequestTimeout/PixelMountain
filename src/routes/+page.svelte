@@ -132,7 +132,6 @@
 		text-align: center;
 		gap: 1rem;
 		height: 70svh;
-		height: calc(var(--js-vh) * 0.7);
 	}
 
 	div.hero__links {
@@ -157,9 +156,8 @@
 		top: 0;
 		right: 0;
 		width: 60rem;
-		opacity: 0.1;
 		user-select: none;
-		max-height: 300vh;
+		max-height: 300svh;
 	}
 
 	@media screen and (min-width: 768px) {

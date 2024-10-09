@@ -69,7 +69,6 @@
 		);
 		/* Change height to lengthen sticky scroll */
 		height: 100svh;
-		height: var(--js-vh);
 		padding: 0;
 	}
 
@@ -77,8 +76,7 @@
 		position: sticky;
 		top: 0;
 		height: 100svh;
-		height: var(--js-vh);
-		width: 100%;
+		width: 100vw;
 		background-color: transparent;
 		display: flex;
 		justify-content: center;
@@ -87,6 +85,7 @@
 		padding: 2rem;
 		overflow: hidden;
 		text-align: center;
+		filter: grayscale(1);
 	}
 
 	.sticky-logo p {

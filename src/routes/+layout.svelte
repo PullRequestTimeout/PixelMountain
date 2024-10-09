@@ -19,18 +19,10 @@
 	afterNavigate(() => {
 		root?.classList.add("smoothscroll");
 	});
-
-	// fix the lack of dynamic viewport height on ios firefox (pls firefox my beloved 😢)
-	let vh = 0;
-	onMount(() => {
-		vh = window.innerHeight;
-	});
 </script>
 
 <Navbar />
-<div style="--js-vh: {vh}px">
-	<slot />
-</div>
+<slot />
 <Footer />
 <BackToTop>
 	<Icon name="arrow-up" color="#fff" size="32" />
