@@ -22,27 +22,39 @@
 
 	// fix the lack of dynamic viewport height on ios firefox (pls firefox my beloved 😢)
 	let vh = 0;
+	let isScrolling = false;
+	let scrollTimeout: ReturnType<typeof setTimeout>;
 	let isResizing = false;
+	let resizeTimeout: ReturnType<typeof setTimeout>;
+
 	onMount(() => {
-		// Set viewheight on initial page load
 		vh = window.innerHeight;
-		// Update vh on resize, shouldn't affect firefox ios
-		window.addEventListener("resize", () => {
-			if (!isResizing) handleResize();
+
+		window.addEventListener("scroll", () => {
+			isScrolling = true;
+
+			// Clear the timeout if the user is still scrolling
+			clearTimeout(scrollTimeout);
+
+			// Set a timeout to reset the scrolling state after 100ms of inactivity
+			scrollTimeout = setTimeout(() => {
+				isScrolling = false;
+			}, 200);
 		});
 
-		function handleResize() {
-			if (isResizing) {
-				return;
-			} else {
-				isResizing = true;
-				setTimeout(() => {
-					vh = window.innerHeight;
+		window.addEventListener("resize", () => {
+			isResizing = true;
 
-					isResizing = false;
-				}, 500);
-			}
-		}
+			if (isResizing && !isScrolling) vh = window.innerHeight;
+
+			// Clear the timeout if the user is still resizing
+			clearTimeout(resizeTimeout);
+
+			// Set a timeout to reset the resizing state after 100ms of inactivity
+			resizeTimeout = setTimeout(() => {
+				isResizing = false;
+			}, 200);
+		});
 	});
 </script>
 
