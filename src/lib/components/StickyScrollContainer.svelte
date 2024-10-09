@@ -84,7 +84,6 @@
 		justify-content: center;
 		align-items: center;
 		overflow: hidden;
-		opacity: 0;
 		padding: 2rem;
 		overflow: hidden;
 		text-align: center;
