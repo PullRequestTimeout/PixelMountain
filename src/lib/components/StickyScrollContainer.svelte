@@ -68,15 +68,16 @@
 			rgba(21, 21, 21, 0) 100%
 		);
 		/* Change height to lengthen sticky scroll */
-		height: 100vh;
+		height: 100svh;
+		height: var(--js-vh);
 		padding: 0;
 	}
 
 	.sticky-container {
 		position: sticky;
 		top: 0;
-		height: 100vh;
 		height: 100svh;
+		height: var(--js-vh);
 		width: 100%;
 		background-color: transparent;
 		display: flex;
