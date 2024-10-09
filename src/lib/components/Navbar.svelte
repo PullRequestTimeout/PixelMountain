@@ -17,7 +17,7 @@
 	let lastScroll = 0;
 	onMount(() => {
 		window.addEventListener("scroll", () => {
-			const currentScroll = window.pageYOffset;
+			const currentScroll = window.scrollY;
 			if (currentScroll <= 0) {
 				scrolling = true;
 			} else if (currentScroll > lastScroll) {
@@ -121,7 +121,6 @@
 		right: 0;
 		width: 100vw;
 		height: 100svh;
-		height: var(--js-vh);
 		max-width: 375px;
 		flex-direction: column;
 		justify-content: center;
