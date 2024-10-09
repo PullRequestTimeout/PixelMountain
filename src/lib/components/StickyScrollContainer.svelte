@@ -48,7 +48,7 @@
 	<div
 		class="sticky-container"
 		bind:this={stickyContainer}
-		style="opacity: {opacity}; transform: scale({scale})"
+		style="--opacity: {opacity}; transform: scale({scale})"
 	>
 		<div class="sticky-logo">
 			<Logo />
@@ -114,6 +114,10 @@
 	@media (min-width: 1024px) {
 		.sticky-logo p {
 			max-width: 30rem;
+		}
+
+		.sticky-container {
+			opacity: var(--opacity);
 		}
 	}
 
