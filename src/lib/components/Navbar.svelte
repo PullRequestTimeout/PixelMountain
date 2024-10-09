@@ -32,7 +32,13 @@
 
 {#if scrolling}
 	<nav class="navbar" transition:slide={{ duration: 300, axis: "y" }}>
-		<a href="/" class="navbar__logo">
+		<a
+			href="/"
+			class="navbar__logo"
+			on:click={() => {
+				isOpen = false;
+			}}
+		>
 			<Logo />
 		</a>
 		<button aria-label="menu button" on:click={handleMenu} class="hamburger btn-green">
@@ -126,6 +132,7 @@
 		justify-content: center;
 		align-items: center;
 		background-color: #1e1e1e;
+		touch-action: none;
 	}
 
 	.navbar__divider-line {
