@@ -14,6 +14,7 @@
 
 	// Show navbar only when at the top of the page or scrolling back up
 	let scrolling = true;
+	let scrollStyles = false;
 	let lastScroll = 0;
 	onMount(() => {
 		window.addEventListener("scroll", () => {
@@ -25,13 +26,20 @@
 			} else {
 				scrolling = true;
 			}
+
+			if (currentScroll > 10) {
+				scrollStyles = true;
+			} else {
+				scrollStyles = false;
+			}
+
 			lastScroll = currentScroll;
 		});
 	});
 </script>
 
 {#if scrolling}
-	<nav class="navbar" transition:slide={{ duration: 300, axis: "y" }}>
+	<nav class="navbar" class:scroll={scrollStyles} transition:slide={{ duration: 300, axis: "y" }}>
 		<a
 			href="/"
 			class="navbar__logo"
@@ -94,8 +102,13 @@
 		padding: 0 1rem;
 		background-color: #15151548;
 		color: white;
-		backdrop-filter: blur(2px);
 		width: 100vw;
+		transition: 0.2s;
+	}
+
+	.navbar.scroll {
+		backdrop-filter: blur(5px);
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 	}
 
 	.navbar__logo {
