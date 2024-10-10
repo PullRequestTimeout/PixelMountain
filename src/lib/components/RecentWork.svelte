@@ -97,10 +97,14 @@
 		height: 100%;
 		object-fit: cover;
 		transition: 0.3s;
-		filter: brightness(0.6);
+		filter: brightness(0.8);
 	}
 
 	@media (hover: hover) {
+		.recent-works__item img {
+			filter: brightness(0.6);
+		}
+
 		.recent-works__item:hover img {
 			transform: scale(1.1);
 			filter: brightness(0.8);
