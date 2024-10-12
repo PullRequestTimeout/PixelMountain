@@ -41,7 +41,7 @@
 		>
 			<Logo />
 		</a>
-		<button aria-label="menu button" on:click={handleMenu} class="hamburger btn-green">
+		<button aria-label="menu button" on:click={handleMenu} class="hamburger">
 			<div class:active={isOpen} />
 		</button>
 		{#if isOpen}
