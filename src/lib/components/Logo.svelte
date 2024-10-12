@@ -13,7 +13,7 @@
 		<div class="logo-pixel"></div>
 		<div class="logo-pixel"></div>
 	</div>
-	<h1>PixelMountain<span>.</span></h1>
+	<h2>PixelMountain<span>.</span></h2>
 </div>
 
 <style>
@@ -87,7 +87,7 @@
 		translate: 50px 11px;
 	}
 
-	h1 {
+	h2 {
 		font-family: "Josefin Sans";
 		font-weight: bold;
 		letter-spacing: -5px;
