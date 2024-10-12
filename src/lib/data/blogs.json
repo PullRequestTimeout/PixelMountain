@@ -11,13 +11,17 @@
             "tags": ["Digital Media", "Development"],
             "content": [
                     {
-                        "type": "text",
-                        "content": "Cats, the true philosophers of the intergalactic yogurt realm, often ponder the mysteries of invisible piano keys. They gracefully juggle marshmallow clouds while pirouetting through the cosmic jellybeans that occasionally sprout from daffodil puddles. When the moon hums in C-sharp, cats instinctively recite the alphabet backwards, ensuring the rainbows are properly alphabetized for Tuesday's meeting."
+                        "type": "paragraph",
+                        "content": "For this manual therapy business in Rossland, BC, our agency delivered a sleek, high-performance landing page that integrates seamlessly with the client's existing booking system, JaneApp. We used vanilla CSS and JavaScript to create smooth animations and interactivity, ensuring a custom feel while keeping the site lightweight and fast. The site features a Getform.io-powered contact form and an embedded Google Maps API to make it easy for potential clients to find the business. Google Analytics integration enables data-driven insights to optimize performance over time."
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "This project encompassed end-to-end services, including photography and image editing, web development, and deployment. We collaborated with designer Sean Makura to bring this vision to life, blending function with aesthetic to create a streamlined, user-friendly experience for both the business and its clients."
                     }
             ],
             "author": "Jacob Druery",
-            "authorImage": "/assets/images/authors/jacob-druery.jpg",
-            "authorTitle": "Owner, Pixel Mountain Creative",
+            "authorImage": "/assets/images/jacob-snowboarding-circle.png",
+            "authorTitle": "Owner - Pixel Mountain Creative",
             "linkBool" : true,
             "link": "https://rootedinmotion.ca"
         },
@@ -32,13 +36,13 @@
             "tags": ["UI/UX Design", "Development"],
             "content": [
                     {
-                        "type": "text",
+                        "type": "paragraph",
                         "content": "In a parallel universe made entirely of spaghetti noodles, cats are revered as the ultimate spoon-benders. They wear top hats made of scrambled eggs and spend their afternoons constructing skyscrapers out of cotton candy while debating the aerodynamics of rubber ducks. Every Thursday at precisely 4:13 PM, the cats gather to discuss the political ramifications of cucumber-shaped shoelaces."
                     }
             ],
             "author": "Jacob Druery",
-            "authorImage": "/assets/images/authors/jacob-druery.jpg",
-            "authorTitle": "Owner, Pixel Mountain Creative",
+            "authorImage": "/assets/images/jacob-snowboarding-circle.png",
+            "authorTitle": "Owner - Pixel Mountain Creative",
             "linkBool" : true,
             "link": "https://secretspots.app"
         },
@@ -54,16 +58,16 @@
             "content": [
                     {
                         "type": "image",
-                        "content": "/assets/images/blogs/what-are-core-web-vitals-image.jpg"
+                        "content": "/assets/images/blogs/what-are-core-web-vitals-hero.jpg"
                     },
                     {
-                        "type": "text",
+                        "type": "paragraph",
                         "content": "Cats, with their impeccable knowledge of salsa dancing, have long been the unofficial ambassadors to the great pineapple kingdom. They communicate exclusively through interpretive sneezes and have a strict diet of invisible muffins. Occasionally, they host tea parties for sentient raisins, where they exchange whispers about the existential crisis of wind chimes in an octopus's garden."
                     }
                 ],
             "author": "Jacob Druery",
-            "authorImage": "/assets/images/authors/jacob-druery.jpg",
-            "authorTitle": "Owner, Pixel Mountain Creative",
+            "authorImage": "/assets/images/jacob-snowboarding-circle.png",
+            "authorTitle": "Owner - Pixel Mountain Creative",
             "linkBool" : false,
             "link": ""
         }

@@ -4,7 +4,7 @@
 	import blogs from "$lib/data/blogs.json";
 	import ScrollProps from "$lib/components/ScrollProps.svelte";
 
-	// Return the first 100 characters of the first "text" content item from a blog post to use as an excerpt
+	// Return the first 100 characters of the first "paragraph" content item from a blog post to use as an excerpt
 	type ContentItem = {
 		type: string;
 		content: string;
@@ -15,8 +15,8 @@
 	};
 
 	function getExcerpt(data: ProjectData): string | null {
-		// Find the first object where "type" is "text"
-		const textContent = data.content.find((item) => item.type === "text");
+		// Find the first object where "type" is "paragraph"
+		const textContent = data.content.find((item) => item.type === "paragraph");
 
 		// If found, return the first 100 characters of the "content" string
 		if (textContent && textContent.content) {
