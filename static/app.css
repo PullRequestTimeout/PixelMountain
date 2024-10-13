@@ -95,9 +95,39 @@
 
 /* iPhone SVH Fix ----------------------------------------------------------------*/
 
-/* :root {
-	--vh: 100svh;
-} */
+:root {
+	--vh: 30rem;
+}
+
+@media screen and (min-width: 375px) {
+	:root {
+		--vh: 35rem;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	:root {
+		--vh: 40rem;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	:root {
+		--vh: 45rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	:root {
+		--vh: 50rem;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	:root {
+		--vh: 100svh;
+	}
+}
 
 /* Globals */
 
