@@ -256,7 +256,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding-top: 30svh;
+		padding-top: calc(var(--vh, 100svh) * 0.3);
 		color: var(--color-white);
 		text-align: center;
 	}

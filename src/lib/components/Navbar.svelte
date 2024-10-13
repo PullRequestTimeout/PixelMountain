@@ -127,7 +127,7 @@
 		top: 0;
 		right: 0;
 		width: 100vw;
-		height: 100svh;
+		height: var(--vh, 100svh);
 		max-width: 375px;
 		flex-direction: column;
 		justify-content: center;

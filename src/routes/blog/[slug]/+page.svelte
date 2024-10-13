@@ -78,8 +78,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		/* gap: 1rem; */
-		padding: 30svh var(--padding-inline);
+		padding: calc(var(--vh, 100svh) * 0.3) var(--padding-inline);
 		width: 100%;
 	}
 

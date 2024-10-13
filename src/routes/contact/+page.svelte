@@ -95,7 +95,7 @@
 <style>
 	.hero {
 		position: relative;
-		height: 80svh;
+		height: calc(var(--vh, 100svh) * 0.8);
 		display: flex;
 		justify-content: center;
 		align-items: center;
