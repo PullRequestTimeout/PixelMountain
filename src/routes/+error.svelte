@@ -24,11 +24,11 @@
 	{:else if $page.error}
 		<h2>{$page.status}</h2>
 		<p>{$page.error.message}</p>
-		<a href="/" class="button button-secondary">Home<Icon name="arrow-right" /></a>
+		<a href="/" class="button button-secondary">Home<Icon name="arrow-right" color="#fff" /></a>
 	{:else}
 		<h2>Oops...</h2>
 		<p>Something went wrong.</p>
-		<a href="/" class="button button-secondary">Home<Icon name="arrow-right" /></a>
+		<a href="/" class="button button-secondary">Home<Icon name="arrow-right" color="#fff" /></a>
 	{/if}
 </section>
 
