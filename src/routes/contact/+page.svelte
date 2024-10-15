@@ -40,7 +40,7 @@
 			</div>
 		</div>
 	</div>
-	<form action="https://www.formbackend.com/f/9529c04929f3acd1" method="post">
+	<form method="post">
 		<div class="contact__name-container">
 			<div class="contact__input-container">
 				<label for="name-input">Name:<span class="required">*</span></label>
