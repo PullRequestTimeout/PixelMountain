@@ -236,6 +236,11 @@ footer {
 	color: var(--color-white);
 }
 
+.button-primary span,
+.button-secondary span {
+	translate: 0 -0.05rem;
+}
+
 .button-primary:focus-visible {
 	outline: 1px solid var(--color-white);
 }
