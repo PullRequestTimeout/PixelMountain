@@ -21,8 +21,6 @@
 			containerTop = rect.top + window.scrollY;
 			containerHeight = rect.height;
 			containerBottom = rect.bottom;
-
-			console.log(rect);
 		};
 
 		updateContainerMetrics();
