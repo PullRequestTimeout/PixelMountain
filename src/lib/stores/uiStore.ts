@@ -1,3 +1,3 @@
 import { writable } from "svelte/store";
 
-export const cookieBanner = writable(true);
+export const cookieBanner = writable(false);

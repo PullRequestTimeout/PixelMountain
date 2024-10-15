@@ -5,6 +5,7 @@
 	let year = new Date().getFullYear();
 	function showCookieBanner() {
 		cookieBanner.set(true);
+		localStorage.setItem("cookieBannerAccepted", "false");
 	}
 </script>
 

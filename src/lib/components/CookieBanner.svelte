@@ -1,12 +1,27 @@
 <script lang="ts">
 	import Icon from "$lib/components/Icon.svelte";
 	import { cookieBanner } from "$lib/stores/uiStore";
+	import { onMount } from "svelte";
+
+	onMount(() => {
+		if (
+			!localStorage.getItem("cookieBannerAccepted") ||
+			localStorage.getItem("cookieBannerAccepted") === "false"
+		) {
+			cookieBanner.set(true);
+		}
+	});
+
+	function hideCookieBanner() {
+		cookieBanner.set(false);
+		localStorage.setItem("cookieBannerAccepted", "true");
+	}
 </script>
 
 {#if $cookieBanner}
 	<div class="cookie-banner">
 		<p>This website uses cookies to ensure you get the best experience on our website</p>
-		<button class="button button-primary" on:click={() => cookieBanner.set(false)}
+		<button class="button button-primary" on:click={hideCookieBanner}
 			>Got it!<Icon name="cookie" color="var(--color-white)" size="24" /></button
 		>
 	</div>
