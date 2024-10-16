@@ -12,7 +12,13 @@
 	});
 </script>
 
-<svelte:window bind:scrollY bind:innerHeight />
+<svelte:window
+	bind:scrollY
+	bind:innerHeight
+	on:resize={() => {
+		scrollHeight = document.documentElement.scrollHeight;
+	}}
+/>
 
 {#if scrollY && scrollHeight}
 	<div class="scroll-pos-bar" style="--scroll-percent: {scrollPercentage}%">
