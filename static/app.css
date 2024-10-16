@@ -28,7 +28,7 @@
 	--padding-inline: 1rem;
 
 	/* Font sizes */
-	--font-body-s: 0.75rem;
+	--font-body-s: 1rem;
 	--font-body-m: 1rem;
 	--font-body-l: 1.25rem;
 
@@ -220,6 +220,7 @@ footer {
 .button {
 	border: none;
 	width: fit-content;
+	max-height: 2rem;
 	border-radius: 2rem;
 	cursor: pointer;
 	display: flex;
@@ -227,7 +228,7 @@ footer {
 	gap: 0.5rem;
 	padding: 0.25rem 1rem;
 	font-weight: 700;
-	font-size: var(--font-size-m);
+	font-size: 1rem;
 	transition: background-color 0.2s;
 }
 
