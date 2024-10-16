@@ -1,12 +1,20 @@
 <script>
-	let scrollPos = 0;
+	import { onMount } from "svelte";
+
+	let scrollY = 0;
+	let scrollHeight = 0;
 	let innerHeight = 0;
-	$: scrollPercentage = (scrollPos / innerHeight) * 100;
+	$: scrollPercentage = (scrollY / (scrollHeight - innerHeight)) * 100;
+
+	onMount(() => {
+		// get total height of the document
+		scrollHeight = document.documentElement.scrollHeight;
+	});
 </script>
 
-<svelte:window bind:scrollY={scrollPos} bind:innerHeight />
+<svelte:window bind:scrollY bind:innerHeight />
 
-{#if scrollPos && innerHeight}
+{#if scrollY && scrollHeight}
 	<div class="scroll-pos-bar" style="--scroll-percent: {scrollPercentage}%">
 		<div class="scroll-pos-progress"></div>
 	</div>
