@@ -318,7 +318,7 @@
 		left: -15rem;
 		user-select: none;
 		opacity: 0.5;
-		z-index: 1;
+		z-index: 0;
 	}
 
 	@media screen and (min-width: 640px) {
