@@ -144,12 +144,7 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	scrollbar-width: thin;
 	scrollbar-color: var(--color-light) var(--color-dark2);
-}
-
-*::-webkit-scrollbar {
-	width: 9px;
 }
 
 *::-webkit-scrollbar-track {
@@ -158,6 +153,10 @@ html {
 
 *::-webkit-scrollbar-thumb {
 	background-color: var(--color-light);
+}
+
+*::selection {
+	background-color: var(--color-primary-transparent);
 }
 
 /* All elements except h sytem var font */
