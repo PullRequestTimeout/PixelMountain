@@ -77,9 +77,11 @@
 		transition: 0.2s;
 	}
 
-	footer a:hover,
-	footer button:hover {
-		color: var(--color-primary);
+	@media (hover: hover) {
+		footer a:hover,
+		footer button:hover {
+			color: var(--color-primary);
+		}
 	}
 
 	.divider-line {
