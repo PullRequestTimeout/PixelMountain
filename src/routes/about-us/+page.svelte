@@ -163,6 +163,8 @@
 	}
 
 	.hero__text {
+		position: relative;
+		z-index: 100;
 		max-width: 45rem;
 		display: flex;
 		flex-direction: column;
@@ -237,6 +239,7 @@
 	.why-us {
 		position: relative;
 		padding: 0 var(--padding-inline);
+		z-index: 10;
 	}
 
 	.why-us .accent-title {
@@ -264,6 +267,7 @@
 
 	.why-us__wireframe-container {
 		position: absolute;
+		z-index: -1;
 		top: 0;
 		left: 0;
 		max-width: 100vw;
@@ -317,6 +321,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		position: relative;
+		z-index: 100;
 	}
 
 	.the-team__container P {
