@@ -8,7 +8,10 @@
 
 	onMount(() => {
 		// get total height of the document
-		scrollHeight = document.documentElement.scrollHeight;
+		// Needs a delay while the dynamic content loads
+		setTimeout(() => {
+			scrollHeight = document.documentElement.scrollHeight;
+		}, 200);
 	});
 </script>
 
@@ -16,7 +19,9 @@
 	bind:scrollY
 	bind:innerHeight
 	on:resize={() => {
-		scrollHeight = document.documentElement.scrollHeight;
+		setTimeout(() => {
+			scrollHeight = document.documentElement.scrollHeight;
+		}, 200);
 	}}
 />
 
