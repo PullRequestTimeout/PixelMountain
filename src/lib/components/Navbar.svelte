@@ -87,7 +87,7 @@
 <style>
 	.navbar {
 		position: fixed;
-		z-index: 50;
+		z-index: 500;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -103,7 +103,7 @@
 		transform: scale(0.5);
 		transform-origin: left;
 		width: 11rem;
-		z-index: 100;
+		z-index: 600;
 	}
 
 	ul {
@@ -184,7 +184,7 @@
 		width: 3rem;
 		aspect-ratio: 1;
 		background-color: transparent;
-		z-index: 100;
+		z-index: 600;
 	}
 
 	button.hamburger:hover {
