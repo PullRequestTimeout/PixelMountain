@@ -284,12 +284,12 @@
 	}
 
 	.about__text {
-		z-index: 1;
+		position: relative;
+		z-index: 10;
 		padding: 2rem var(--padding-inline);
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		z-index: 10;
 	}
 
 	.about__text a {
@@ -302,6 +302,8 @@
 	}
 
 	.about__accent-text {
+		position: relative;
+		z-index: 10;
 		text-align: center;
 		padding: 0 var(--padding-inline);
 		margin-bottom: 4rem;

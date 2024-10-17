@@ -169,4 +169,10 @@
 			justify-content: space-between;
 		}
 	}
+
+	@media screen and (min-width: 1440px) {
+		header {
+			padding: calc(var(--vh, 100svh) * 0.35) var(--padding-inline);
+		}
+	}
 </style>

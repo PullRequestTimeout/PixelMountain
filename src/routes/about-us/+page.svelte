@@ -185,6 +185,10 @@
 		.hero__text p {
 			max-width: 45rem;
 		}
+
+		.hero--top-pad {
+			padding-top: calc(var(--vh, 100svh) * 0.35);
+		}
 	}
 
 	/* Who We Are */

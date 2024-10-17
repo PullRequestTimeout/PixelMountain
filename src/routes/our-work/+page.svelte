@@ -212,6 +212,10 @@
 			max-width: 35rem;
 			max-height: 40rem;
 		}
+
+		.hero--top-pad {
+			padding-top: calc(var(--vh, 100svh) * 0.35);
+		}
 	}
 
 	/* Recent Work ----------------------------------- */

@@ -304,6 +304,10 @@
 	}
 
 	@media screen and (min-width: 1440px) {
+		.hero {
+			padding-top: calc(var(--vh, 100svh) * 0.35);
+		}
+
 		.hero__text {
 			max-width: 60rem;
 		}
