@@ -26,6 +26,29 @@
 		// Return null if no suitable content is found
 		return null;
 	}
+
+	interface Blog {
+		title: string;
+		subtitle: string;
+		type: string;
+		featured: boolean;
+		slug: string;
+		cardImage: string;
+		heroImage: string;
+		date: string;
+		tags: string[];
+		content: ContentItem[];
+		author: string;
+		authorImage: string;
+		authorTitle: string;
+		linkBool: boolean;
+		link: string;
+	}
+
+	// Only return blogs that don't have the "featured" property set to true
+	function unfeaturedBlogs(blogs: Blog[]): Blog[] {
+		return blogs.filter((blog) => !blog.featured);
+	}
 </script>
 
 <svelte:head>
@@ -56,7 +79,7 @@
 			</p>
 			<p>Optimized design for both mobile and desktop use.</p>
 			<a href="/blog/secret-spots" class="button button-secondary"
-				>See More<Icon name="arrow-right" color="#fff" /></a
+				><span>See More</span><Icon name="arrow-right" color="#fff" /></a
 			>
 		</div>
 		<div class="featured-work__image">
@@ -76,7 +99,7 @@
 			</div>
 		</ScrollProps>
 		<div class="recent-work__card-container">
-			{#each blogs as blog}
+			{#each unfeaturedBlogs(blogs) as blog}
 				<div class="recent-work__card">
 					<img src={blog.heroImage} alt={blog.title + " hero image"} />
 					<div class="recent-work__card-text">
@@ -84,7 +107,7 @@
 						<h3>{blog.title}</h3>
 						<p>{getExcerpt(blog)}</p>
 						<a href="/blog/{blog.slug}" class="button button-secondary"
-							>See More<Icon name="arrow-right" color="#fff" /></a
+							><span>See More</span><Icon name="arrow-right" color="#fff" /></a
 						>
 					</div>
 				</div>
@@ -213,7 +236,8 @@
 
 	.recent-work__card img {
 		width: 100%;
-		height: auto;
+		height: 15rem;
+		object-fit: cover;
 		border-radius: 1rem;
 	}
 

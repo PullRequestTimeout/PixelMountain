@@ -1,9 +1,10 @@
 
     [
         {
-            "title": "Rooted In Motion",
+            "title": "Rooted In Motion Landing Page",
             "subtitle": "",
             "type": "project",
+            "featured": false,
             "slug": "rooted-in-motion",
             "cardImage": "/assets/images/blogs/rooted-in-motion-card.jpg",
             "heroImage": "/assets/images/blogs/rooted-in-motion-hero.jpg",
@@ -12,7 +13,7 @@
             "content": [
                     {
                         "type": "paragraph",
-                        "content": "For this manual therapy business in Rossland, BC, our agency delivered a sleek, high-performance landing page that integrates seamlessly with the client's existing booking system, JaneApp. We used vanilla CSS and JavaScript to create smooth animations and interactivity, ensuring a custom feel while keeping the site lightweight and fast. The site features a Getform.io-powered contact form and an embedded Google Maps API to make it easy for potential clients to find the business. Google Analytics integration enables data-driven insights to optimize performance over time."
+                        "content": "For this manual therapy business in Rossland, BC, Pixel Mountain delivered a sleek, high-performance landing page that integrates seamlessly with the client's existing booking system, JaneApp. We used vanilla CSS and JavaScript to create smooth animations and interactivity, ensuring a custom feel while keeping the site lightweight and fast. The site features a contact form and an embedded Google Maps API to make it easy for potential clients to find the business. Google Analytics integration enables data-driven insights to optimize performance over time."
                     },
                     {
                         "type": "paragraph",
@@ -26,49 +27,113 @@
             "link": "https://rootedinmotion.ca"
         },
         {
-            "title": "Secret Spots",
+            "title": "Joe and Jana's Wedding Ceremony",
             "subtitle": "",
             "type": "project",
-            "slug": "secret-spots",
-            "cardImage": "/assets/images/blogs/secret-spots-card.jpg",
-            "heroImage": "/assets/images/blogs/secret-spots-hero.jpg",
-            "date": "Jan 2024",
-            "tags": ["UI/UX Design", "Development"],
+            "featured": false,
+            "slug": "joe-and-jana-wedding",
+            "cardImage": "/assets/images/blogs/joe-and-jana-wedding-card.jpg",
+            "heroImage": "/assets/images/blogs/joe-and-jana-wedding-hero.jpg",
+            "date": "Oct 2024",
+            "tags": ["Digital Media"],
             "content": [
                     {
                         "type": "paragraph",
-                        "content": "In a parallel universe made entirely of spaghetti noodles, cats are revered as the ultimate spoon-benders. They wear top hats made of scrambled eggs and spend their afternoons constructing skyscrapers out of cotton candy while debating the aerodynamics of rubber ducks. Every Thursday at precisely 4:13 PM, the cats gather to discuss the political ramifications of cucumber-shaped shoelaces."
+                        "content": "While not the typical outdoor sports and event photography that Pixel Mountain is known for, we were thrilled to step out of our comfort zone to capture Joe and Jana’s intimate elopement at Chemo Cabin in the mountains above Rossland, BC. Surrounded by close family, their ceremony was set against the breathtaking natural beauty of the Rossland Range in the early fall, making for a truly memorable day."
+                    },
+                    {
+                        "type": "image",
+                        "content": "v1729124922/DSC05092-2_ceby2b.jpg"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "We documented not only the key moments but also the small, candid interactions that made their day unique. The stunning backdrop, combined with the couple’s genuine happiness, allowed us to create a collection of images that captured the heart of their celebration."
+                    },
+                    {
+                        "type": "image",
+                        "content": "v1729125067/DSC05572_btk3bq.jpg"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "We wish Joe and Jana all the best in their future together and are grateful for the opportunity to step beyond our usual work to help tell their story."
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "Sample set only currently available, stay tuned for the full gallery in the coming weeks."
                     }
             ],
             "author": "Jacob Druery",
             "authorImage": "/assets/images/jacob-snowboarding-circle.png",
             "authorTitle": "Owner - Pixel Mountain Creative",
             "linkBool" : true,
-            "link": "https://secretspots.app"
+            "link": "https://pixelmountaincreative.pixieset.com/joeandjanawedding/"
         },
         {
-            "title": "What are Core Web Vitals?",
-            "subtitle": "And how do they impact your business?",
-            "type": "blog post",
-            "slug": "what-are-core-web-vitals",
-            "cardImage": "/assets/images/blogs/what-are-core-web-vitals-card.jpg",
-            "heroImage": "/assets/images/blogs/what-are-core-web-vitals-hero.jpg",
-            "date": "Sep 2024",
-            "tags": ["Development", "Business Technology"],
+            "title": "Secret Spots Web App",
+            "subtitle": "",
+            "type": "project",
+            "featured": true,
+            "slug": "secret-spots",
+            "cardImage": "/assets/images/blogs/secret-spots-card.jpg",
+            "heroImage": "/assets/images/blogs/secret-spots-hero.jpg",
+            "date": "Jun 2024",
+            "tags": ["UI/UX Design", "Development"],
             "content": [
                     {
-                        "type": "image",
-                        "content": "/assets/images/blogs/what-are-core-web-vitals-hero.jpg"
+                        "type": "paragraph",
+                        "content": "Secret Spots is a web app built with SvelteKit and Firebase that allows users to keep a personal logbook of their favourite locations with a maps API, and record descriptions and notes of various visits to the location. The app was built by the Pixel Mountain team to showcase some more advanced features available for client projects, suchs as user authentication, database integration, and API usage."
                     },
                     {
                         "type": "paragraph",
-                        "content": "Cats, with their impeccable knowledge of salsa dancing, have long been the unofficial ambassadors to the great pineapple kingdom. They communicate exclusively through interpretive sneezes and have a strict diet of invisible muffins. Occasionally, they host tea parties for sentient raisins, where they exchange whispers about the existential crisis of wind chimes in an octopus's garden."
+                        "content": "Secret Spots is a full-stack project conceptualised and realised end-to-end by the Pixel Mountain team, from design to deployment. The app is built with a responsive design that works on all devices, and features a clean, intuitive user interface built from the ground up that makes it easy for users to add, edit, and delete locations and visits. The app also includes a search feature that allows users to quickly find locations by name or description. Users can customise their experience through a settings page that allows them to change their name, email, and password."
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "Pixel Mountain is proud to present Secret Spots as an example of the high-quality, custom web applications we can build for clients looking to take their online presence to the next level."
                     }
-                ],
+            ],
             "author": "Jacob Druery",
             "authorImage": "/assets/images/jacob-snowboarding-circle.png",
             "authorTitle": "Owner - Pixel Mountain Creative",
-            "linkBool" : false,
-            "link": ""
+            "linkBool" : true,
+            "link": "https://secretspots.app/"
+        },
+        {
+            "title": "TreeHugger Hare Scramble",
+            "subtitle": "",
+            "type": "project",
+            "featured": false,
+            "slug": "treehugger-hare-scramble",
+            "cardImage": "/assets/images/blogs/treehugger-hare-scramble-card.jpg",
+            "heroImage": "/assets/images/blogs/treehugger-hare-scramble-hero.jpg",
+            "date": "Sep 2023",
+            "tags": ["Digital Media"],
+            "content": [
+                    {
+                        "type": "paragraph",
+                        "content": "The Pixel Mountain team were on-site to capture the excitement of the 2023 Tree Hugger Hare Scramble, an annual off-road motorcycle enduro event held at Kootenay Motocross Track. The event featured riders of all ages and skill levels, from beginners to seasoned pros, competing in a hare scramble style race over the course of two days in September 2023."
+                    },
+                    {
+                        "type": "image",
+                        "content": "v1729123615/DSC07353_fixacn.jpg"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "We provided full event coverage, capturing the action from multiple vantage points around the track, as well as candid shots of riders and spectators. Our team worked closely with event organizers to ensure we captured all the key moments, from the start line to the podium celebrations. The resulting images were used for promotional materials, social media, and press releases to help grow the event's profile and attract new participants in following years."
+                    },
+                    {
+                        "type": "image",
+                        "content": "v1729122821/DSC08251_xgnqu4.jpg"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "Check out the link below to see the full set from the event."
+                    }
+            ],
+            "author": "Jacob Druery",
+            "authorImage": "/assets/images/jacob-snowboarding-circle.png",
+            "authorTitle": "Owner - Pixel Mountain Creative",
+            "linkBool" : true,
+            "link": "https://pixelmountaincreative.pixieset.com/treehuggerharescramble/"
         }
     ]

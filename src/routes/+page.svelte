@@ -289,6 +289,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+		z-index: 10;
 	}
 
 	.about__text a {
@@ -317,6 +318,7 @@
 		left: -15rem;
 		user-select: none;
 		opacity: 0.5;
+		z-index: 1;
 	}
 
 	@media screen and (min-width: 640px) {
