@@ -25,7 +25,7 @@
 	}}
 />
 
-{#if scrollY && scrollHeight}
+{#if scrollY && scrollHeight && scrollY > 0}
 	<div class="scroll-pos-bar" style="--scroll-percent: {scrollPercentage}%">
 		<div class="scroll-pos-progress"></div>
 	</div>
