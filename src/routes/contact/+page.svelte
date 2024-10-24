@@ -40,7 +40,7 @@
 			</div>
 		</div>
 	</div>
-	<form method="post">
+	<form method="post" class="plausible-event-name=Form+Submission">
 		<div class="contact__name-container">
 			<div class="contact__input-container">
 				<label for="name-input">Name:<span class="required">*</span></label>
