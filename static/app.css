@@ -4,6 +4,7 @@
 	src:
 		url("fonts/JosefinSans-Bold.woff2") format("woff2"),
 		url("fonts/JosefinSans-Bold.woff") format("woff");
+	font-display: swap;
 }
 
 /* Variables */
@@ -299,8 +300,8 @@ span.highlight::after {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 100;
-	height: 100%;
+	width: 100%;
+	height: 120%;
 	z-index: -1;
 	background-color: var(--color-primary-transparent);
 	/* animation: highlight 0.4s ease-in-out forwards 1s; */
