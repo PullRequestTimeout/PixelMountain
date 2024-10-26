@@ -17,7 +17,9 @@
 <main>
 	<section>
 		<div class="hero__text">
-			<h2><span class="highlight">Simplifying</span> your digital experience</h2>
+			<h2>
+				Simplifying your digital experience to <span class="highlight">save you time</span>
+			</h2>
 			<p>We look after <em>every pixel</em> of your digital presence, so you don't have to</p>
 			<div class="hero__links">
 				<a href="/services" class="button button-secondary">Learn More</a>
@@ -46,13 +48,14 @@
 		</ScrollProps>
 		<div class="services__item">
 			<div class="services__item-heading">
-				<h3>UI/UX Design</h3>
+				<h3>End to End Website Creation</h3>
 				<p class="services__item-heading-number">01.</p>
 			</div>
 			<p class="services__item-text">
-				Fully customized websites to suit your businesses needs. Mobile-first, accessible,
-				responsive design, developed with a focus on performance and interactivity to boost your
-				conversion rates and revenue. All ongoing maintenance included.
+				We design and build websites that are tailored to your business, ensuring a professional
+				online presence from day one. Our process takes you from concept to launch, without
+				requiring any technical input from you. We handle all the complexities of web development,
+				leaving you with a site that works perfectly and aligns with your business goals.
 			</p>
 		</div>
 		<ScrollProps let:props className="show" threshold={1} once={true}>
@@ -60,12 +63,14 @@
 		</ScrollProps>
 		<div class="services__item">
 			<div class="services__item-heading">
-				<h3>Development</h3>
+				<h3>Ongoing Management</h3>
 				<p class="services__item-heading-number">02.</p>
 			</div>
 			<p class="services__item-text">
-				Get your digital store up and running fast, with a tailored design to match your brand. Gain
-				access to full suite of analytics designed to give your business the tools you need to grow.
+				Once your website is live, we take care of everything from updates to security, ensuring
+				your site stays fast, secure, and up-to-date. Our focus is to save you the time and stress
+				of managing your website, allowing you to concentrate on running your business. With us
+				handling the tech, you’ll never have to worry about maintaining your site again.
 			</p>
 		</div>
 		<ScrollProps let:props className="show" threshold={1} once={true}>
@@ -73,14 +78,14 @@
 		</ScrollProps>
 		<div class="services__item">
 			<div class="services__item-heading">
-				<h3>Multimedia</h3>
+				<h3>Multimedia Services</h3>
 				<p class="services__item-heading-number">03.</p>
 			</div>
 			<p class="services__item-text">
-				Bring your brand to life with bespoke digital media and asset creation. From eye-catching
-				graphics and engaging video content to professional photography and immersive animations,
-				every asset is crafted to captivate your audience. Seamlessly integrated with your overall
-				strategy, ensuring consistency and enhancing your brand's presence across all platforms.
+				From high-quality photography and video production to custom graphics, we provide the
+				professional media your business needs to stand out. Whether for your website, social media,
+				or promotional materials, we manage the entire process, so you don’t have to worry about
+				creating or maintaining the visuals that keep your brand fresh and engaging.
 			</p>
 		</div>
 		<ScrollProps let:props className="show" threshold={1} once={true}>
@@ -144,6 +149,7 @@
 
 	.hero__text h2 {
 		font-size: var(--font-heading-l);
+		max-width: 60rem;
 	}
 
 	.hero__text p {

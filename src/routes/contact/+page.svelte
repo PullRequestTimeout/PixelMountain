@@ -4,10 +4,11 @@
 </script>
 
 <svelte:head>
-	<title
-		>Contact | Pixel Mountain Creative - Boutique digital agency nestled in the mountains of
-		Beautiful British Columbia</title
-	>
+	<title>Contact | Pixel Mountain Creative</title>
+	<meta
+		name="description"
+		content="Get in contact with us at Pixel Mountain Creative, a boutique digital agency in British Columbia."
+	/>
 </svelte:head>
 
 <section class="hero">

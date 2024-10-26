@@ -10,6 +10,10 @@
 		>About Us | Pixel Mountain Creative - Boutique digital agency nestled in the mountains of
 		Beautiful British Columbia</title
 	>
+	<meta
+		name="description"
+		content="Get to know more about us at Pixel Mountain Creative, a boutique digital agency in British Columbia. See our featured projects and learn more about our services."
+	/>
 </svelte:head>
 
 <main>

@@ -52,10 +52,11 @@
 </script>
 
 <svelte:head>
-	<title
-		>Our Work | Pixel Mountain Creative - Boutique digital agency nestled in the mountains of
-		Beautiful British Columbia</title
-	>
+	<title>Our Work | Pixel Mountain Creative</title>
+	<meta
+		name="description"
+		content="Explore our portfolio of digital creations at Pixel Mountain Creative, a boutique digital agency in British Columbia. See our featured projects and learn more about our services."
+	/>
 </svelte:head>
 
 <main>
