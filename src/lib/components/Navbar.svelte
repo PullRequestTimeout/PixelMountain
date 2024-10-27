@@ -31,7 +31,7 @@
 </script>
 
 {#if scrolling}
-	<nav class="navbar" transition:slide={{ duration: 300, axis: "y" }}>
+	<nav class="navbar" class:blur={scrolling} transition:slide={{ duration: 300, axis: "y" }}>
 		<a
 			href="/"
 			class="navbar__logo"
@@ -97,6 +97,11 @@
 		color: white;
 		width: 100vw;
 		transition: 0.5s;
+	}
+
+	/* Fix svelte transition removing the blur filter */
+	.navbar.blur {
+		backdrop-filter: blur(3px);
 	}
 
 	.navbar__logo {
