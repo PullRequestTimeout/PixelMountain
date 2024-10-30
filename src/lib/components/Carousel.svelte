@@ -120,6 +120,11 @@
 		position: relative;
 	}
 
+	div.embla__slide:nth-child(2),
+	div.embla__slide:nth-child(3) {
+		opacity: 0.5;
+	}
+
 	div.embla__slide-content {
 		position: absolute;
 		top: 50%;
