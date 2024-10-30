@@ -447,7 +447,7 @@
 		content: "$";
 		font-size: 1.2rem;
 		position: absolute;
-		translate: -1rem 1rem;
+		translate: -0.75rem 0;
 	}
 
 	h3.services__card-heading--large {
@@ -480,6 +480,10 @@
 			padding: 2rem;
 			max-width: fit-content;
 		}
+
+		.services__card h3 span::before {
+			translate: -1rem 0.5rem;
+		}
 	}
 
 	@media (min-width: 1024px) {
@@ -495,6 +499,10 @@
 
 		.services__card {
 			padding: 2rem;
+		}
+
+		.services__card h3 span::before {
+			font-size: 1.4rem;
 		}
 
 		.services__item-text-container {
