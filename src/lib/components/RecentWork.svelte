@@ -35,7 +35,7 @@
 		{/each}
 	</div>
 	<a href="/our-work" class="button button-secondary"
-		>See More <Icon name="arrow-right" color="#fff" /></a
+		><span>See More</span><Icon name="arrow-right" color="#fff" /></a
 	>
 </section>
 
