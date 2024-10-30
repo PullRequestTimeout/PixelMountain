@@ -7,9 +7,41 @@
 	// Add file names to lengthen slideshow
 	const images = ["DSC08900.jpg", "DSC03363.jpg", "DSC03570.jpg"];
 
+	// Add data to lengthen slideshow
+	type Slide = {
+		image: string;
+		alt: string;
+		clientFeedback: string;
+		clientName: string;
+	};
+
+	const slides: { [key: string]: Slide } = {
+		slide1: {
+			image: "DSC08900.jpg",
+			alt: "Image number 1 of the carousel.",
+			clientFeedback:
+				"The website Pixel Mountain created for my business was beyond expectations! I love the design, and attention to detail with the animations and function, and many of my own clients have given numerous compliments on the quality of the site and how easy it was to book in. The increase in business since the launch more than pays for the cost of the services.",
+			clientName: "Michelle — rootedinmotion.ca"
+		},
+		slide2: {
+			image: "DSC03363.jpg",
+			alt: "Image number 2 of the carousel.",
+			clientFeedback:
+				"Working with the team at Pixel Mountain has been a great experience, so happy with the results! They are professional, creative, and always deliver on time. I would highly recommend them!",
+			clientName: "Chloe — Multimedia Services"
+		},
+		slide3: {
+			image: "DSC03570.jpg",
+			alt: "Image number 3 of the carousel.",
+			clientFeedback:
+				"Working with the team at Pixel Mountain has been a great experience, so happy with the results! They are professional, creative, and always deliver on time. I would highly recommend them!",
+			clientName: "Chloe — Multimedia Services"
+		}
+	};
+
 	let emblaApi: any;
 	const options = { loop: true, duration: 60 };
-	let plugins = [ClassNames(), Autoplay()];
+	let plugins = [ClassNames(), Autoplay({ delay: 10000 })];
 	let resize: number;
 
 	const onInit = (event: any) => {
@@ -35,12 +67,18 @@
 {#key resize}
 	<section class="embla" use:emblaCarouselSvelte={{ options, plugins }} on:emblaInit={onInit}>
 		<div class="embla__container">
-			{#each images as image, i}
-				<img
-					src={`/assets/images/carousel/${image}`}
-					alt={`Image number ${i + 1} of the carousel.`}
-					class="embla__slide"
-				/>
+			{#each Object.keys(slides) as slide}
+				<div class="embla__slide">
+					<img
+						src={`/assets/images/carousel/${slides[slide].image}`}
+						alt={slides[slide].alt}
+						class="embla__slide"
+					/>
+					<div class="embla__slide-content">
+						<p class="embla__slide-feedback">{slides[slide].clientFeedback}</p>
+						<p class="embla__slide-client-name">{slides[slide].clientName}</p>
+					</div>
+				</div>
 			{/each}
 		</div>
 		<button class="embla__prev" on:click={emblaApi.scrollPrev} aria-label="Carousel Previous">
@@ -69,9 +107,49 @@
 		display: flex;
 	}
 
-	img.embla__slide {
+	div.embla__container img {
+		filter: brightness(0.5);
+		width: 100%;
+		object-fit: cover;
+	}
+
+	div.embla__slide {
 		flex: 0 0 100%;
 		min-width: 0;
+		position: relative;
+	}
+
+	div.embla__slide-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		max-width: 30rem;
+		padding: 1rem;
+		color: #fff;
+		text-align: center;
+		font-size: var(--font-body-m);
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.embla__slide-feedback {
+		font-style: italic;
+		font-size: 0.7rem;
+	}
+
+	.embla__slide-feedback::before {
+		content: "“";
+	}
+
+	.embla__slide-feedback::after {
+		content: "”";
+	}
+
+	.embla__slide-client-name {
+		font-weight: bold;
 	}
 
 	section.embla > button {
@@ -85,6 +163,7 @@
 		background-color: transparent;
 		translate: 0 -50%;
 		padding: 0.5rem;
+		display: none;
 	}
 
 	section.embla > button > svg {
@@ -105,20 +184,41 @@
 		translate: 0.75rem 0;
 	}
 
+	@media screen and (min-width: 365px) {
+		.embla__slide-feedback {
+			font-size: var(--font-body-m);
+		}
+	}
+
+	@media screen and (min-width: 640px) {
+		div.embla__slide-content {
+			gap: 1rem;
+		}
+	}
+
 	@media screen and (min-width: 768px) {
+		section.embla > button {
+			display: flex;
+		}
+
 		section.embla > button > svg {
 			width: 3rem;
 			height: 3rem;
+			filter: drop-shadow(0 0 0.2rem rgba(0, 0, 0, 0.75));
 		}
 
-		img.embla__slide {
+		div.embla__slide {
 			flex: 0 0 80%;
 			padding: 0 1rem;
+		}
+
+		div.embla__slide-content {
+			max-width: 70%;
 		}
 	}
 
 	@media screen and (min-width: 1024px) {
-		img.embla__slide {
+		div.embla__slide {
 			flex: 0 0 60%;
 			padding: 0 1rem;
 		}
