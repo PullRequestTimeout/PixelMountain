@@ -4,10 +4,6 @@
 	import { setupTweenOpacity } from "$lib/utils/tweenOpacity.js";
 	import Autoplay from "embla-carousel-autoplay";
 
-	// Add file names to lengthen slideshow
-	const images = ["DSC08900.jpg", "DSC03363.jpg", "DSC03570.jpg"];
-
-	// Add data to lengthen slideshow
 	type Slide = {
 		image: string;
 		alt: string;
@@ -15,23 +11,24 @@
 		clientName: string;
 	};
 
+	// Add data to lengthen slideshow
 	const slides: { [key: string]: Slide } = {
 		slide1: {
-			image: "DSC08900.jpg",
+			image: "DSC08900_djk0pr.jpg",
 			alt: "Image number 1 of the carousel.",
 			clientFeedback:
 				"The website Pixel Mountain created for my business was beyond expectations! I love the design, and attention to detail with the animations and function, and many of my own clients have given numerous compliments on the quality of the site and how easy it was to book in. The increase in business since the launch more than pays for the cost of the services.",
 			clientName: "Michelle — rootedinmotion.ca"
 		},
 		slide2: {
-			image: "DSC03363.jpg",
+			image: "DSC03363_nnsxju.jpg",
 			alt: "Image number 2 of the carousel.",
 			clientFeedback:
 				"Working with the team at Pixel Mountain has been a great experience, so happy with the results! They are professional, creative, and always deliver on time. I would highly recommend them!",
 			clientName: "Chloe — Multimedia Services"
 		},
 		slide3: {
-			image: "DSC03570.jpg",
+			image: "DSC03570_yvfj9x.jpg",
 			alt: "Image number 3 of the carousel.",
 			clientFeedback:
 				"Working with the team at Pixel Mountain has been a great experience, so happy with the results! They are professional, creative, and always deliver on time. I would highly recommend them!",
@@ -70,9 +67,13 @@
 			{#each Object.keys(slides) as slide}
 				<div class="embla__slide">
 					<img
-						src={`/assets/images/carousel/${slides[slide].image}`}
+						sizes="(min-width: 50em) 50em, 100vw"
+						srcset={`https://res.cloudinary.com/dvdwz9dpc/image/upload/f_auto/q_auto/c_scale,w_640/${slides[slide].image} 256w,
+						https://res.cloudinary.com/dvdwz9dpc/image/upload/f_auto/q_auto/c_scale,w_768/${slides[slide].image} 640w,
+						https://res.cloudinary.com/dvdwz9dpc/image/upload/f_auto/q_auto/c_scale,w_1024/${slides[slide].image} 768w,
+						https://res.cloudinary.com/dvdwz9dpc/image/upload/f_auto/q_auto/c_scale,w_1280/${slides[slide].image} 1024w`}
+						src={`https://res.cloudinary.com/dvdwz9dpc/image/upload/f_auto/q_auto/c_scale,w_512/${slides[slide].image}`}
 						alt={slides[slide].alt}
-						class="embla__slide"
 					/>
 					<div class="embla__slide-content">
 						<p class="embla__slide-feedback">{slides[slide].clientFeedback}</p>
