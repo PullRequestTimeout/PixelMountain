@@ -163,7 +163,6 @@
 		right: 0;
 		width: 60rem;
 		user-select: none;
-		max-height: calc(var(--vh, 100svh) * 3);
 	}
 
 	@media screen and (min-width: 768px) {
