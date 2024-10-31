@@ -31,8 +31,8 @@
 			image: "DSC03570_yvfj9x.jpg",
 			alt: "Image number 3 of the carousel.",
 			clientFeedback:
-				"Working with the team at Pixel Mountain has been a great experience, so happy with the results! They are professional, creative, and always deliver on time. I would highly recommend them!",
-			clientName: "Chloe — Multimedia Services"
+				"Pixel Mountain does amazing work. They created a website that is super fast and functions well. I loved their creativity in adding more design elements than I had planned for. Their communication is great, so they are quite reliable too! As usual in development, they came across many problems but always fixed them very quickly, and I probably wasn't even aware of all the problems they fixed!",
+			clientName: "Sean — Creative Collaborator"
 		}
 	};
 
