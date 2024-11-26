@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Icon from "$lib/components/Icon.svelte";
 	import StickyScrollContainer from "$lib/components/StickyScrollContainer.svelte";
+	import ParallaxHero from "$lib/components/ParallaxHero.svelte";
 	import RecentWork from "$lib/components/RecentWork.svelte";
 	import GetInTouch from "$lib/components/GetInTouch.svelte";
 
@@ -239,15 +240,20 @@
 			</div>
 		</div>
 	</section>
-	<StickyScrollContainer>
-		<video
-			src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4"
-			loop
-			muted
-			autoplay
-			playsinline
-		></video>
-	</StickyScrollContainer>
+	<div class="video-hero">
+		<StickyScrollContainer>
+			<video
+				src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4"
+				loop
+				muted
+				autoplay
+				playsinline
+			></video>
+		</StickyScrollContainer>
+	</div>
+	<div class="parallax-hero">
+		<ParallaxHero />
+	</div>
 	<RecentWork />
 	<GetInTouch />
 </main>
@@ -319,6 +325,22 @@
 
 		.hero img {
 			width: 100rem;
+		}
+	}
+
+	/* Scroll Hero ------------------------------------------------ */
+
+	.video-hero {
+		display: none;
+	}
+
+	@media screen and (min-width: 1024px) {
+		.video-hero {
+			display: block;
+		}
+
+		.parallax-hero {
+			display: none;
 		}
 	}
 

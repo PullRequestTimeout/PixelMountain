@@ -1,5 +1,6 @@
 <script lang="ts">
 	import StickyScrollContainer from "$lib/components/StickyScrollContainer.svelte";
+	import ParallaxHero from "$lib/components/ParallaxHero.svelte";
 	import AboutImageScroller from "$lib/components/AboutImageScroller.svelte";
 	import GetInTouch from "$lib/components/GetInTouch.svelte";
 	import ScrollProps from "$lib/components/ScrollProps.svelte";
@@ -30,15 +31,20 @@
 			</p>
 		</div>
 	</section>
-	<StickyScrollContainer>
-		<video
-			src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4"
-			loop
-			muted
-			autoplay
-			playsinline
-		></video>
-	</StickyScrollContainer>
+	<div class="video-hero">
+		<StickyScrollContainer>
+			<video
+				src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4"
+				loop
+				muted
+				autoplay
+				playsinline
+			></video>
+		</StickyScrollContainer>
+	</div>
+	<div class="parallax-hero">
+		<ParallaxHero />
+	</div>
 	<section class="who-we-are">
 		<ScrollProps let:props className="show" threshold={1} once={true}>
 			<div class="accent-title {props.class}">
@@ -197,7 +203,23 @@
 		}
 	}
 
-	/* Who We Are */
+	/* Scroll Hero ------------------------------------------------ */
+
+	.video-hero {
+		display: none;
+	}
+
+	@media screen and (min-width: 1024px) {
+		.video-hero {
+			display: block;
+		}
+
+		.parallax-hero {
+			display: none;
+		}
+	}
+
+	/* Who We Are ------------------------------------------------- */
 
 	.who-we-are,
 	.who-we-are__text,
