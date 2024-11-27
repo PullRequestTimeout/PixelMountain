@@ -99,7 +99,7 @@
 		left: 0;
 		top: var(--top);
 		object-fit: cover;
-		filter: contrast(1.2) brightness(0.8);
+		filter: contrast(1.2) brightness(0.8) grayscale(1);
 	}
 
 	@media (max-width: 350px) {
