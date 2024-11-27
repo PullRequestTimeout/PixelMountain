@@ -347,7 +347,7 @@
 	/* Services ------------------------------------ */
 	.services {
 		color: var(--color-white);
-		padding: 0 var(--padding-inline) 2rem var(--padding-inline);
+		padding: 0 var(--padding-inline) 4rem var(--padding-inline);
 	}
 
 	.services__button-container {
