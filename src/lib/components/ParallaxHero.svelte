@@ -63,16 +63,15 @@
 
 <style>
 	.parallax-container {
-		top: 0;
+		padding: 0;
+		position: relative;
 		height: var(--vh, 100svh);
 		width: 100vw;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 2rem;
 		overflow: hidden;
 		text-align: center;
-		filter: grayscale(1);
 	}
 
 	.parallax-logo {
@@ -95,12 +94,11 @@
 	.parallax-image {
 		position: absolute;
 		z-index: -1;
-		top: var(--top, 0);
+		width: 100vw;
+		height: calc(var(--vh, 100svh) * 1.5);
 		left: 0;
-		min-width: 100%;
-		height: 150%;
+		top: var(--top);
 		object-fit: cover;
-		/* filter: brightness(0.5); */
 		filter: contrast(1.2) brightness(0.8);
 	}
 
