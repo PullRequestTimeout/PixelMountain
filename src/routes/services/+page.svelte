@@ -139,6 +139,7 @@
 		</div>
 
 		<div class="services__item" class:active={currentTab === "landing-page"}>
+			<!-- <div class="services__item"> -->
 			<div class="services__item-text-container">
 				<div class="services__item-heading">
 					<h3>Custom Landing Page Design & Development</h3>
@@ -259,7 +260,8 @@
 			</div>
 		</div>
 
-		<div class="services__item" class:active={currentTab === "e-commerce"}>
+		<div class="services__item services__item--wide" class:active={currentTab === "e-commerce"}>
+			<!-- <div class="services__item services__item--wide"> -->
 			<div class="services__item-text-container">
 				<div class="services__item-heading">
 					<h3>Tailored eCommerce Platform</h3>
@@ -317,7 +319,8 @@
 			</div>
 		</div>
 
-		<div class="services__item" class:active={currentTab === "multimedia"}>
+		<div class="services__item services__item--wide" class:active={currentTab === "multimedia"}>
+			<!-- <div class="services__item services__item--wide"> -->
 			<div class="services__item-text-container">
 				<div class="services__item-heading">
 					<h3>Premium Multimedia Services</h3>
@@ -682,6 +685,7 @@
 		position: absolute;
 		opacity: 0;
 	}
+
 	.services__item.active {
 		opacity: 1;
 		position: relative;
@@ -926,6 +930,7 @@
 			margin-top: 2rem;
 			flex-direction: row;
 			flex-wrap: wrap;
+			gap: 2rem 1rem;
 			width: 100%;
 			justify-content: space-evenly;
 		}
@@ -937,23 +942,26 @@
 
 		.services__card {
 			padding: 2rem;
+			min-width: 25rem;
+			max-width: calc(33.333% - 2rem);
 		}
 
 		.services__card h3 span::before {
 			font-size: 1.4rem;
 		}
 
-		.services__item-text-container {
+		.services__item-text-container:not(
+				.services__item.services__item--wide .services__item-text-container
+			) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 2rem;
 		}
 
-		.services__card--large {
-			padding: 4rem 2rem;
+		.services__item.services__item--wide {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: center;
 		}
-	}
-
-	@media (min-width: 1024px) {
 	}
 </style>
