@@ -11,8 +11,6 @@
 	let containerHeight = 0;
 
 	onMount(() => {
-		console.log(container.getBoundingClientRect());
-		console.log(windowInnerHeight);
 		if (container) {
 			containerTop = container.getBoundingClientRect().top;
 			containerBottom = container.getBoundingClientRect().bottom;
