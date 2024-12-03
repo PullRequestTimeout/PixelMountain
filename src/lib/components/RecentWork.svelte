@@ -41,7 +41,7 @@
 
 <style>
 	.recent-works {
-		color: black;
+		color: var(--color-black, #fff);
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -60,9 +60,9 @@
 		clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 	}
 
-	.recent-works__container {
-		display: flex;
-		justify-content: center;
+	.recent-works__container a {
+		display: block;
+		width: 100%;
 	}
 
 	.recent-works__item {
@@ -70,8 +70,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		width: 15rem;
-		height: 20rem;
+		width: 100%;
+		aspect-ratio: 1 / 1.25;
 		border-radius: 1rem;
 		padding: 1rem;
 		overflow: hidden;
@@ -86,6 +86,14 @@
 	#recent-works__item-1,
 	#recent-works__item-2 {
 		display: none;
+	}
+
+	.recent-works__item span {
+		font-size: var(--font-body-s);
+	}
+
+	.recent-works__item h3 {
+		font-size: var(--font-body-m);
 	}
 
 	.recent-works__item img {
@@ -124,7 +132,14 @@
 
 	@media screen and (min-width: 640px) {
 		.recent-works__container {
-			justify-content: space-evenly;
+			display: flex;
+			justify-content: space-between;
+			gap: 1rem;
+		}
+
+		.recent-works__item {
+			width: 100%;
+			aspect-ratio: 1 / 1.25;
 		}
 
 		#recent-works__item-0 {
@@ -139,12 +154,6 @@
 	@media screen and (min-width: 1024px) {
 		.recent-works__container {
 			width: 100%;
-			justify-content: space-evenly;
-		}
-
-		.recent-works__item {
-			width: 17.5rem;
-			height: 22.5rem;
 		}
 
 		#recent-works__item-2 {
@@ -152,10 +161,9 @@
 		}
 	}
 
-	@media screen and (min-width: 1440px) {
-		.recent-works__item {
-			width: 20rem;
-			height: 25rem;
+	@media screen and (min-width: 768px) {
+		.recent-works__container {
+			gap: 2rem;
 		}
 	}
 </style>
