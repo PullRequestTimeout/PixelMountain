@@ -303,7 +303,7 @@
 							</li>
 							<li>
 								<Icon name="circle-check" color="#000" size="24"></Icon>Multimedia for product
-								display contact form
+								display
 							</li>
 							<li>
 								<Icon name="circle-check" color="#000" size="24"></Icon>Inventory integration,
