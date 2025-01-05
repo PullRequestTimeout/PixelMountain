@@ -289,7 +289,7 @@
 					</p>
 					<div class="services__card-heading">
 						<p>Starting from</p>
-						<h3><span>1999</span></h3>
+						<h3><span>2499</span></h3>
 					</div>
 					<div class="services__card-details">
 						<ul>
