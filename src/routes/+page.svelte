@@ -19,7 +19,7 @@
 	<section>
 		<div class="hero__text">
 			<h2>
-				Simplifying your digital experience to <span class="highlight">save you time</span>
+				A creative web agency dedicated to <span class="highlight">saving you time</span>
 			</h2>
 			<p>We look after <em>every pixel</em> of your digital presence, so you don't have to</p>
 			<div class="hero__links">
@@ -64,7 +64,7 @@
 				leaving you with a site that works perfectly and aligns with your business goals.
 			</p>
 		</div>
-		<ScrollProps let:props className="show" threshold={1} once={true}>
+		<ScrollProps let:props className="show" threshold={1} once={false}>
 			<div class="services__divider {props.class}"></div>
 		</ScrollProps>
 		<div class="services__item">
@@ -79,7 +79,7 @@
 				handling the tech, you’ll never have to worry about maintaining your site again.
 			</p>
 		</div>
-		<ScrollProps let:props className="show" threshold={1} once={true}>
+		<ScrollProps let:props className="show" threshold={1} once={false}>
 			<div class="services__divider {props.class}"></div>
 		</ScrollProps>
 		<div class="services__item">
@@ -94,7 +94,7 @@
 				creating or maintaining the visuals that keep your brand fresh and engaging.
 			</p>
 		</div>
-		<ScrollProps let:props className="show" threshold={1} once={true}>
+		<ScrollProps let:props className="show" threshold={1} once={false}>
 			<div class="services__divider {props.class}"></div>
 		</ScrollProps>
 		<a href="/services" class="services__link button button-secondary"

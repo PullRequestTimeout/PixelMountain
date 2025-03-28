@@ -1,7 +1,67 @@
 
     [
         {
-            "title": "Rooted In Motion Landing Page",
+            "title": "Bialkowski Gallery",
+            "subtitle": "",
+            "type": "project",
+            "featured": true,
+            "slug": "bialkowski-gallery",
+            "cardImage": "/assets/images/blogs/bialkowski-gallery-card.jpg",
+            "heroImage": "/assets/images/blogs/bialkowski-gallery-hero.jpg",
+            "date": "March 2025",
+            "tags": ["UI/UX Design", "Digital Media", "eCommerce"],
+            "content": [
+                    {
+                        "type": "paragraph",
+                        "content": "Morgan Bialkowski has been building a name for herself as a talented contemporary artist in Rossland, capturing the region's landscapes and wildlife in her vibrant acrylic paintings. Pixel Mountain Creative were excited to work with her on a full redesign of her existing online store, creating a website that serves as both a professional portfolio and a seamless e-commerce platform for selling her artwork."
+                    },
+                    {
+                        "type": "video",
+                        "content": "v1743126333/BialkowskiGalleryMockup_f4sb6w.mp4" 
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "This project encompassed a complete overhaul of the site's design and functionality, including streamlined e-commerce integration to simplify the purchasing process for customers. We provided photography and videography to showcase Morgan's work in the best light, along with all the necessary digital assets to maintain a cohesive and visually compelling online presence. Since launch, the website has enhanced Morgan's ability to connect with her audience, making it easier than ever for collectors to explore and purchase her art."
+                    }
+            ],
+            "author": "Jacob Druery",
+            "authorImage": "/assets/images/jacob-snowboarding-circle.png",
+            "authorTitle": "Owner - Pixel Mountain Creative",
+            "linkBool" : true,
+            "link": "https://bialkowskigallery.ca/"
+        },
+        {
+            "title": "B&T's Hard Knock Cafe",
+            "subtitle": "",
+            "type": "project",
+            "featured": false,
+            "slug": "hard-knock-cafe",
+            "cardImage": "/assets/images/blogs/hard-knock-cafe-card.jpg",
+            "heroImage": "/assets/images/blogs/hard-knock-cafe-hero.jpg",
+            "date": "Jan 2025",
+            "tags": ["UI/UX Design", "Digital Media", "Development"],
+            "content": [
+                    {
+                        "type": "paragraph",
+                        "content": "Jonny and Tyler have quickly turned B&T's Hard Knock Cafe into one of the most popular venues in Rossland, and serve the town up some exceptional food, music, and great times. Pixel Mountain Creative were thrilled to work with them to create a website that reflects the Hard Rock Cafe's unique vibe and showcases their menu and events in a fun, engaging way."
+                    },
+                    {
+                        "type": "video",
+                        "content": "v1743125398/HardKnockMockup_dmygps.mp4" 
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "This project encompassed end-to-end services including photography and image editing, web development, and deployment, and we were able to build on the outstanding branding and design work Kickstart Customs in Rossland had already done with B&T's to create design assets optimised for use on the web. The website grew quickly in the first few weeks after launch to thousands of weekly pageviews, and Pixel Mountain were able to provide ongoing support to help Jonny and Tyler manage their online presence and keep their customers engaged, which saw a direct increase in revenue and event attendance."
+                    }
+            ],
+            "author": "Jacob Druery",
+            "authorImage": "/assets/images/jacob-snowboarding-circle.png",
+            "authorTitle": "Owner - Pixel Mountain Creative",
+            "linkBool" : true,
+            "link": "https://thehardknockcafe.ca"
+        },
+        {
+            "title": "Rooted In Motion",
             "subtitle": "",
             "type": "project",
             "featured": false,
@@ -13,7 +73,11 @@
             "content": [
                     {
                         "type": "paragraph",
-                        "content": "For this manual therapy business in Rossland, BC, Pixel Mountain delivered a sleek, high-performance landing page that integrates seamlessly with the client's existing booking system, JaneApp. We used vanilla CSS and JavaScript to create smooth animations and interactivity, ensuring a custom feel while keeping the site lightweight and fast. The site features a contact form and an embedded Google Maps API to make it easy for potential clients to find the business. Google Analytics integration enables data-driven insights to optimize performance over time."
+                        "content": "For this Osteopathy business in Rossland, BC, Pixel Mountain delivered a sleek, high-performance landing page that integrates seamlessly with the client's existing booking system, JaneApp. We used vanilla CSS and JavaScript to create smooth animations and interactivity, ensuring a custom feel while keeping the site lightweight and fast. The site features a contact form and an embedded Google Maps API to make it easy for potential clients to find the business. Google Analytics integration enables data-driven insights to optimize performance over time."
+                    },
+                    {
+                        "type": "image",
+                        "content": "v1729739660/RootedInMotionMockupLaptop_cpyjkl.jpg"
                     },
                     {
                         "type": "paragraph",
@@ -72,7 +136,7 @@
             "title": "Secret Spots Web App",
             "subtitle": "",
             "type": "project",
-            "featured": true,
+            "featured": false,
             "slug": "secret-spots",
             "cardImage": "/assets/images/blogs/secret-spots-card.jpg",
             "heroImage": "/assets/images/blogs/secret-spots-hero.jpg",

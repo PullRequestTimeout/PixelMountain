@@ -41,7 +41,7 @@
 		<p>{data.blog.date} — {readingTime(data.blog.content) + " min read"}</p>
 		{#each data.blog.content as content}
 			{#if content.type === "image"}
-				<div class="blog-content__image-container">
+				<div class="blog-content__container">
 					<img
 						class="blog-content__image"
 						sizes="(min-width: 50em) 50em, 100vw"
@@ -52,6 +52,17 @@
 						src="https://res.cloudinary.com/dvdwz9dpc/image/upload/f_auto/q_auto/c_scale,w_512/{content.content}"
 						alt=""
 					/>
+				</div>
+			{:else if content.type === "video"}
+				<div class="blog-content__container">
+					<video
+						src="https://res.cloudinary.com/dvdwz9dpc/video/upload/f_auto/q_auto/{content.content}"
+						class="blog-content__video"
+						loop
+						muted
+						autoplay
+						playsinline
+					></video>
 				</div>
 			{:else if content.type === "paragraph"}
 				<p>{content.content}</p>
@@ -126,14 +137,15 @@
 		line-height: 1.6;
 	}
 
-	.blog-content img.blog-content__image {
+	.blog-content img.blog-content__image,
+	.blog-content video.blog-content__video {
 		width: 100%;
 		height: auto;
 		margin: 1rem 0;
 		max-width: 45rem;
 	}
 
-	.blog-content__image-container {
+	.blog-content__container {
 		display: flex;
 		justify-content: center;
 	}
