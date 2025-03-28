@@ -71,22 +71,22 @@
 		<div class="featured-work__text">
 			<div>
 				<em>Featured Work</em>
-				<h2>Secret Spots PWA</h2>
+				<h2>Bialkowski Gallery eCommerce</h2>
 			</div>
 			<p>
-				Secrets Spots was build by the team to showcase some more advanced features available to
-				Pixel Mountain clients. These include an auth system (login, user management), progressive
-				web app native-like features, and database integration for dynamic content.
+				Bialkowski Gallery was rebuilt by the team to provide a seamless online showcase for Morgan
+				Bialkowski’s artwork. The site features a beautifully designed portfolio, e-commerce
+				functionality for artwork sales, and a responsive layout that ensures an optimal viewing
+				experience on any device.
 			</p>
-			<p>Optimized design for both mobile and desktop use.</p>
-			<a href="/blog/secret-spots" class="button button-secondary"
+			<a href="/blog/bialkowski-gallery" class="button button-secondary"
 				><span>See More</span><Icon name="arrow-right" color="#fff" /></a
 			>
 		</div>
 		<div class="featured-work__image">
 			<img
-				src="/assets/images/blogs/secret-spots-mockup.png"
-				alt="Secret spots mockup"
+				src="/assets/images/blogs/bialkowski-gallery-mockup.png"
+				alt="Bialkowski Gallery website device mockup"
 				width="958"
 				height="758"
 			/>
@@ -102,7 +102,9 @@
 		<div class="recent-work__card-container">
 			{#each unfeaturedBlogs(blogs) as blog}
 				<div class="recent-work__card">
-					<img src={blog.heroImage} alt={blog.title + " hero image"} />
+					<a href="/blog/{blog.slug}">
+						<img src={blog.heroImage} alt={blog.title + " hero image"} />
+					</a>
 					<div class="recent-work__card-text">
 						<em>{blog.type} — {blog.date}</em>
 						<h3>{blog.title}</h3>
@@ -227,8 +229,8 @@
 		gap: 2rem;
 	}
 	.recent-work__card-container {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
 		gap: 2rem;
 	}
 
@@ -236,7 +238,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		max-width: 20rem;
+		max-width: 100%;
 	}
 
 	.recent-work__card img {
@@ -259,5 +261,29 @@
 	.recent-work__card-text em,
 	.recent-work__card-text h3 {
 		text-transform: capitalize;
+	}
+
+	@media screen and (min-width: 640px) {
+		.recent-work__card-container {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		.recent-work__card-container {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		.recent-work__card-container {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	@media screen and (min-width: 1600px) {
+		.recent-work__card-container {
+			grid-template-columns: repeat(5, 1fr);
+		}
 	}
 </style>
