@@ -622,7 +622,7 @@
 		}
 
 		.hero img {
-			width: 100rem;
+			width: 100vw;
 		}
 	}
 
