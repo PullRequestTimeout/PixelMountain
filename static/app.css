@@ -229,7 +229,7 @@ footer {
 	padding: 0.25rem 1rem;
 	font-weight: 700;
 	font-size: 1rem;
-	transition: background-color 0.2s;
+	transition: 0.2s;
 }
 
 .button-primary {
@@ -271,6 +271,32 @@ footer {
 	transform: translateX(0);
 }
 
+/* A varient css class for the scroll props components, should animate all child components in with a delay when the original class*/
+@keyframes fadeInSequence {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animated-children > * {
+	opacity: 0; /* Keep elements hidden until animation starts */
+}
+
+.animated-children.animate > * {
+	animation: fadeInSequence 0.5s ease-out forwards;
+}
+
+.animated-children.animate > *:nth-child(n) {
+	animation-delay: calc(0.1s * (n - 1));
+}
+
+/* -------------------------------------------------------------- */
+
 .accent-title img {
 	translate: 0 -0.25rem;
 }
@@ -308,25 +334,13 @@ span.highlight::after {
 	/* animation: highlight 0.4s ease-in-out forwards 1s; */
 }
 
-/* @keyframes highlight {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
-} */
-
 /* Hover effects */
 @media (hover: hover) {
 	.button-primary:hover {
 		background-color: var(--color-primary-dark);
 	}
 
-	.button-secondary:hover {
-		outline: 1px solid white;
-	}
-
+	.button-secondary:hover,
 	.text-input:hover {
 		outline: 1px solid var(--color-white);
 	}
