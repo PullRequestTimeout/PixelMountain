@@ -161,8 +161,13 @@
 	section.gallery {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-		grid-auto-rows: minmax(350px, auto);
-		gap: 2rem;
+		gap: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		section.gallery {
+			gap: 2rem;
+		}
 	}
 
 	button.gallery-item img {
@@ -174,7 +179,6 @@
 	button.gallery-item {
 		background: none;
 		border: none;
-		/* margin: 1rem; */
 		display: block;
 		cursor: pointer;
 		position: relative;
@@ -194,10 +198,7 @@
 	/* Lightbox */
 	div.lightbox {
 		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
+		inset: 0;
 		background-color: rgba(0, 0, 0, 0.8);
 		backdrop-filter: blur(5px);
 		display: flex;
