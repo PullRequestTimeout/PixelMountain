@@ -72,6 +72,10 @@
 			svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width=${size} fill=${inputColor}><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>`
 		},
 		{
+			name: "arrow-left",
+			svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width=${size} fill=${inputColor}><path d="M313-440h487v-80H313l224-224-57-56-320 320 320 320 57-56-224-224Z"/></svg>`
+		},
+		{
 			name: "arrow-up",
 			svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width=${size} fill=${inputColor}><path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/></svg>`
 		},
