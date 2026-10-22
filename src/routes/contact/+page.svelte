@@ -1,6 +1,9 @@
 <script>
 	import Icon from "$lib/components/Icon.svelte";
 	import Map from "$lib/components/Map.svelte";
+
+	// Set by the form action when the email fails to send
+	export let form;
 </script>
 
 <svelte:head>
@@ -41,7 +44,8 @@
 			</div>
 		</div>
 	</div>
-	<form method="post" class="plausible-event-name=Form+Submission">
+	<!-- "Form Submission" Plausible event is sent from the server action, after the honeypot check -->
+	<form method="post">
 		<div class="contact__name-container">
 			<div class="contact__input-container">
 				<label for="name-input">Name:<span class="required">*</span></label>
@@ -50,6 +54,7 @@
 					type="text"
 					name="name"
 					id="name-input"
+					value={form?.values?.name ?? ""}
 					placeholder="John Doe"
 					required
 				/>
@@ -61,6 +66,7 @@
 					type="email"
 					name="email"
 					id="email-input"
+					value={form?.values?.email ?? ""}
 					placeholder="johndoe@email.com"
 					required
 				/>
@@ -72,6 +78,7 @@
 			type="text"
 			name="subject"
 			id="subject-input"
+			value={form?.values?.subject ?? ""}
 			placeholder="Project inquiry..."
 			required
 		/>
@@ -80,9 +87,21 @@
 			class="text-input"
 			id="message-input"
 			name="message"
+			value={form?.values?.message ?? ""}
 			placeholder="Your message here..."
 			required
 		></textarea>
+		<!-- Honeypot: hidden from people, bots that fill it are silently dropped -->
+		<div class="contact__honeypot" aria-hidden="true">
+			<label for="website-input">Website</label>
+			<input type="text" name="website" id="website-input" tabindex="-1" autocomplete="off" />
+		</div>
+		{#if form?.error}
+			<p class="contact__error" role="alert">
+				Sorry, your message couldn't be sent. Please try again, or email us at
+				<a href="mailto:hello@pixelmountain.ca">hello@pixelmountain.ca</a>.
+			</p>
+		{/if}
 		<button type="submit" class="button button-secondary"
 			>Get In Touch<Icon name="arrow-right" color="#fff" /></button
 		>
@@ -94,6 +113,18 @@
 </section>
 
 <style>
+	.contact__error {
+		color: var(--color-error, red);
+	}
+
+	.contact__honeypot {
+		position: absolute;
+		left: -9999px;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+	}
+
 	.hero {
 		position: relative;
 		height: calc(var(--vh, 100svh) * 0.8);
