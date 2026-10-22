@@ -323,6 +323,12 @@
 		margin-top: 1rem;
 	}
 
+	@media (hover: hover) {
+		.about__text a:hover {
+			outline: 1px solid var(--color-black);
+		}
+	}
+
 	.about__text-heading,
 	.about__accent-text {
 		font-size: var(--font-heading-l);
