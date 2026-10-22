@@ -1,8 +1,11 @@
+import type { EmblaCarouselType } from "embla-carousel";
+
 const TWEEN_FACTOR = 2.5;
 
-const numberWithinRange = (number, min, max) => Math.min(Math.max(number, min), max);
+const numberWithinRange = (number: number, min: number, max: number) =>
+	Math.min(Math.max(number, min), max);
 
-const calculateTweenValuesOpacity = (emblaApi) => {
+const calculateTweenValuesOpacity = (emblaApi: EmblaCarouselType): number[] => {
 	const engine = emblaApi.internalEngine();
 	const scrollProgress = emblaApi.scrollProgress();
 
@@ -25,7 +28,7 @@ const calculateTweenValuesOpacity = (emblaApi) => {
 	});
 };
 
-export const setupTweenOpacity = (emblaApi) => {
+export const setupTweenOpacity = (emblaApi: EmblaCarouselType) => {
 	const tweenNodes = emblaApi.slideNodes();
 
 	const applyTweenOpacity = () => {
