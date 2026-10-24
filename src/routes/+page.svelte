@@ -46,11 +46,13 @@
 		<ParallaxHero />
 	</div>
 	<section class="services">
-		<ScrollProps let:props className="show" threshold={1} once={true}>
-			<div class="accent-title {props.class}">
-				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-				<h2>What We Do</h2>
-			</div>
+		<ScrollProps className="show" threshold={1} once={true}>
+			{#snippet children(props)}
+				<div class="accent-title {props.class}">
+					<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+					<h2>What We Do</h2>
+				</div>
+			{/snippet}
 		</ScrollProps>
 		<div class="services__item">
 			<div class="services__item-heading">
@@ -64,8 +66,10 @@
 				leaving you with a site that works perfectly and aligns with your business goals.
 			</p>
 		</div>
-		<ScrollProps let:props className="show" threshold={1} once={false}>
-			<div class="services__divider {props.class}"></div>
+		<ScrollProps className="show" threshold={1} once={false}>
+			{#snippet children(props)}
+				<div class="services__divider {props.class}"></div>
+			{/snippet}
 		</ScrollProps>
 		<div class="services__item">
 			<div class="services__item-heading">
@@ -79,8 +83,10 @@
 				handling the tech, you’ll never have to worry about maintaining your site again.
 			</p>
 		</div>
-		<ScrollProps let:props className="show" threshold={1} once={false}>
-			<div class="services__divider {props.class}"></div>
+		<ScrollProps className="show" threshold={1} once={false}>
+			{#snippet children(props)}
+				<div class="services__divider {props.class}"></div>
+			{/snippet}
 		</ScrollProps>
 		<div class="services__item">
 			<div class="services__item-heading">
@@ -94,8 +100,10 @@
 				creating or maintaining the visuals that keep your brand fresh and engaging.
 			</p>
 		</div>
-		<ScrollProps let:props className="show" threshold={1} once={false}>
-			<div class="services__divider {props.class}"></div>
+		<ScrollProps className="show" threshold={1} once={false}>
+			{#snippet children(props)}
+				<div class="services__divider {props.class}"></div>
+			{/snippet}
 		</ScrollProps>
 		<a href="/services" class="services__link button button-secondary"
 			>Learn More <Icon name="arrow-right" color="#fff"></Icon></a

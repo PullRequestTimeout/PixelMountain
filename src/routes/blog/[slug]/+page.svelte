@@ -3,7 +3,11 @@
 	import ScrollProgress from "$lib/components/ScrollProgress.svelte";
 	import type { PageData } from "./$types";
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	// function to calculate reading time
 	type ContentItem = {

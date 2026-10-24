@@ -3,7 +3,7 @@
 	import Icon from "$lib/components/Icon.svelte";
 	import { onMount } from "svelte";
 
-	let count = 5;
+	let count = $state(5);
 
 	onMount(() => {
 		const interval = setInterval(() => {

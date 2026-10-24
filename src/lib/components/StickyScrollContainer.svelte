@@ -1,13 +1,19 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { onMount, type Snippet } from "svelte";
 	import Logo from "./Logo.svelte";
 
-	let scrollY = 0;
+	interface Props {
+		children?: Snippet;
+	}
+
+	let { children }: Props = $props();
+
+	let scrollY = $state(0);
 	let stickyContainer: HTMLDivElement;
-	let containerTop = 0;
-	let containerHeight = 0;
-	let containerBottom = 0;
-	let windowInnerHeight = 0;
+	let containerTop = $state(0);
+	let containerHeight = $state(0);
+	let containerBottom = $state(0);
+	let windowInnerHeight = $state(0);
 
 	onMount(() => {
 		const updateContainerMetrics = () => {
@@ -27,19 +33,20 @@
 		};
 	});
 
-	$: opacity = Math.min(
-		1,
-		Math.max(0, (scrollY - containerTop + windowInnerHeight) / containerHeight)
-	);
+	// Fades in as the container scrolls into view, then fades out as it scrolls past
+	let opacity = $derived.by(() => {
+		if (containerBottom < containerHeight) {
+			return (containerBottom - 50) / containerHeight;
+		}
+		return Math.min(1, Math.max(0, (scrollY - containerTop + windowInnerHeight) / containerHeight));
+	});
 
-	$: scale = Math.min(
-		1,
-		Math.max(0.75, 0.75 + 0.25 * ((scrollY - containerTop + windowInnerHeight) / containerHeight))
+	let scale = $derived(
+		Math.min(
+			1,
+			Math.max(0.75, 0.75 + 0.25 * ((scrollY - containerTop + windowInnerHeight) / containerHeight))
+		)
 	);
-
-	$: if (containerBottom < containerHeight) {
-		opacity = (containerBottom - 50) / containerHeight;
-	}
 </script>
 
 <svelte:window bind:scrollY bind:innerHeight={windowInnerHeight} />
@@ -54,7 +61,7 @@
 			<Logo />
 			<p>Creative digital agency nestled in the mountains of Beautiful British Columbia</p>
 		</div>
-		<slot></slot>
+		{@render children?.()}
 	</div>
 </section>
 

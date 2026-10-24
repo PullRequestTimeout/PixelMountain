@@ -1,7 +1,13 @@
-// TODO: Add type for node and event in a way that doesn't break it
-export function clickOutside(node: any) {
-	const handleClick = (event: any) => {
-		if (!node.contains(event.target)) {
+import type { Action } from "svelte/action";
+
+// Dispatches an "outclick" event on the node when a click lands outside it (listen with onoutclick)
+export const clickOutside: Action<
+	HTMLElement,
+	undefined,
+	{ onoutclick: (e: CustomEvent) => void }
+> = (node) => {
+	const handleClick = (event: MouseEvent) => {
+		if (!node.contains(event.target as Node)) {
 			node.dispatchEvent(new CustomEvent("outclick"));
 		}
 	};
@@ -13,4 +19,4 @@ export function clickOutside(node: any) {
 			document.removeEventListener("click", handleClick, true);
 		}
 	};
-}
+};

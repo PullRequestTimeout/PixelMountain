@@ -21,7 +21,7 @@
 {#if $cookieBanner}
 	<div class="cookie-banner">
 		<p>This website uses cookies to ensure you get the best experience on our website</p>
-		<button class="button button-primary" on:click={hideCookieBanner}
+		<button class="button button-primary" onclick={hideCookieBanner}
 			>Got it!<Icon name="cookie" color="var(--color-white)" size="24" /></button
 		>
 	</div>

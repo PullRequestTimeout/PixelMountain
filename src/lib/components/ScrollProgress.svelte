@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from "svelte";
 
-	let scrollY = 0;
-	let scrollHeight = 0;
-	let innerHeight = 0;
-	$: scrollPercentage = (scrollY / (scrollHeight - innerHeight)) * 100;
+	let scrollY = $state(0);
+	let scrollHeight = $state(0);
+	let innerHeight = $state(0);
+	let scrollPercentage = $derived((scrollY / (scrollHeight - innerHeight)) * 100);
 
 	onMount(() => {
 		// get total height of the document
@@ -18,7 +18,7 @@
 <svelte:window
 	bind:scrollY
 	bind:innerHeight
-	on:resize={() => {
+	onresize={() => {
 		setTimeout(() => {
 			scrollHeight = document.documentElement.scrollHeight;
 		}, 200);

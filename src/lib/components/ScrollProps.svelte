@@ -1,22 +1,30 @@
-<!-- 
+<!--
 	Usage:
-	<ScrollProps let:props className="show" threshold={0.5} once={true}>
-		<div class={props.class}>CONTENT</div>
+	<ScrollProps className="show" threshold={0.5} once={true}>
+		{#snippet children(props)}
+			<div class={props.class}>CONTENT</div>
+		{/snippet}
 	</ScrollProps>
 
-	Then style the div and the animation class as needed in the parent component. "Show", the animation class, 
+	Then style the div and the animation class as needed in the parent component. "Show", the animation class,
     can be any class name allowing for unique animations.
 -->
 
 <script lang="ts">
-	import { onMount } from "svelte";
-	export let className = "";
-	export let threshold = 0.1;
-	export let once = false;
+	import { onMount, type Snippet } from "svelte";
 
-	let props = {
+	interface Props {
+		className?: string;
+		threshold?: number;
+		once?: boolean;
+		children?: Snippet<[{ class: string }]>;
+	}
+
+	let { className = "", threshold = 0.1, once = false, children }: Props = $props();
+
+	let slotProps = $state({
 		class: ""
-	};
+	});
 	let container: HTMLElement;
 	let hasAppliedClass = false;
 
@@ -24,12 +32,12 @@
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
 				if (!once || (once && !hasAppliedClass)) {
-					props = { ...props, class: className };
+					slotProps = { ...slotProps, class: className };
 					hasAppliedClass = true;
 				}
 			} else {
 				if (!once) {
-					props = { ...props, class: "" };
+					slotProps = { ...slotProps, class: "" };
 				}
 			}
 		});
@@ -42,9 +50,11 @@
 		if (container) {
 			observer.observe(container);
 		}
+
+		return () => observer.disconnect();
 	});
 </script>
 
 <div bind:this={container}>
-	<slot {props}></slot>
+	{@render children?.(slotProps)}
 </div>

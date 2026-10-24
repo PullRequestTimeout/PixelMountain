@@ -93,11 +93,13 @@
 		</div>
 	</section>
 	<section class="recent-work">
-		<ScrollProps let:props className="show" threshold={1} once={true}>
-			<div class="accent-title {props.class}">
-				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-				<h2>Some More Of Our Work</h2>
-			</div>
+		<ScrollProps className="show" threshold={1} once={true}>
+			{#snippet children(props)}
+				<div class="accent-title {props.class}">
+					<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+					<h2>Some More Of Our Work</h2>
+				</div>
+			{/snippet}
 		</ScrollProps>
 		<div class="recent-work__card-container">
 			{#each unfeaturedBlogs(blogs) as blog}
