@@ -7,16 +7,16 @@
 	// import LangToggle from "$lib/components/LangToggle.svelte";
 
 	//Hamburger menu logic
-	let isOpen = false;
+	let isOpen = $state(false);
 	const handleMenu = () => {
 		isOpen = !isOpen;
 	};
 
 	// Show navbar only when at the top of the page or scrolling back up
-	let scrolling = true;
+	let scrolling = $state(true);
 	let lastScroll = 0;
 	onMount(() => {
-		window.addEventListener("scroll", () => {
+		const handleScroll = () => {
 			const currentScroll = window.scrollY;
 			if (currentScroll <= 0) {
 				scrolling = true;
@@ -26,7 +26,10 @@
 				scrolling = true;
 			}
 			lastScroll = currentScroll;
-		});
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
 	});
 </script>
 
@@ -35,31 +38,31 @@
 		<a
 			href="/"
 			class="navbar__logo"
-			on:click={() => {
+			onclick={() => {
 				isOpen = false;
 			}}
 		>
 			<Logo />
 		</a>
-		<button aria-label="menu button" on:click={handleMenu} class="hamburger">
-			<div class:active={isOpen} />
+		<button aria-label="menu button" onclick={handleMenu} class="hamburger">
+			<div class:active={isOpen}></div>
 		</button>
 		{#if isOpen}
 			<ul transition:slide={{ duration: 400, axis: "x" }} class="navbar__link-list small-screens">
 				<li class="navbar__link" class:open={isOpen}>
-					<a href="/services" on:click={handleMenu}>Services</a>
+					<a href="/services" onclick={handleMenu}>Services</a>
 				</li>
-				<div class="navbar__divider-line" class:open={isOpen}></div>
+				<li class="navbar__divider-line" class:open={isOpen} role="separator"></li>
 				<li class="navbar__link" class:open={isOpen}>
-					<a href="/our-work" on:click={handleMenu}>Our&nbsp;Work</a>
+					<a href="/our-work" onclick={handleMenu}>Our&nbsp;Work</a>
 				</li>
-				<div class="navbar__divider-line" class:open={isOpen}></div>
+				<li class="navbar__divider-line" class:open={isOpen} role="separator"></li>
 				<li class="navbar__link" class:open={isOpen}>
-					<a href="/about-us" on:click={handleMenu}>About&nbsp;Us</a>
+					<a href="/about-us" onclick={handleMenu}>About&nbsp;Us</a>
 				</li>
-				<div class="navbar__divider-line" class:open={isOpen}></div>
+				<li class="navbar__divider-line" class:open={isOpen} role="separator"></li>
 				<li class="navbar__link button button-primary" class:open={isOpen}>
-					<a href="/contact" on:click={handleMenu}
+					<a href="/contact" onclick={handleMenu}
 						><span>Contact</span><Icon name="arrow-right" color="#fff" /></a
 					>
 				</li>

@@ -1,18 +1,25 @@
 <script>
 	import { fade } from "svelte/transition";
-	export let showAtPixel = 200;
+	/**
+	 * @typedef {Object} Props
+	 * @property {number} [showAtPixel]
+	 * @property {import('svelte').Snippet} [children]
+	 */
 
-	let scrollHeight = 0;
+	/** @type {Props} */
+	let { showAtPixel = 200, children } = $props();
+
+	let scrollHeight = $state(0);
 	function goToTop() {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	}
 
-	$: showGotoTop = scrollHeight > showAtPixel;
+	let showGotoTop = $derived(scrollHeight > showAtPixel);
 </script>
 
 {#if showGotoTop}
-	<button class="btn" transition:fade={{ duration: 200 }} on:click={goToTop} title="Go to top"
-		><slot /></button
+	<button class="btn" transition:fade={{ duration: 200 }} onclick={goToTop} title="Go to top"
+		>{@render children?.()}</button
 	>
 {/if}
 

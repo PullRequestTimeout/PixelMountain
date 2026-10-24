@@ -46,11 +46,13 @@
 		<ParallaxHero />
 	</div>
 	<section class="who-we-are">
-		<ScrollProps let:props className="show" threshold={1} once={true}>
-			<div class="accent-title {props.class}">
-				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-				<h2>Who We Are</h2>
-			</div>
+		<ScrollProps className="show" threshold={1} once={true}>
+			{#snippet children(props)}
+				<div class="accent-title {props.class}">
+					<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+					<h2>Who We Are</h2>
+				</div>
+			{/snippet}
 		</ScrollProps>
 		<div class="who-we-are__text">
 			<h3>We are creative collective with a passion for crafting engaging digital experiences</h3>
@@ -78,11 +80,13 @@
 		</div>
 	</section>
 	<section class="why-us">
-		<ScrollProps let:props className="show" threshold={1} once={true}>
-			<div class="accent-title {props.class}">
-				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-				<h2>Why Us?</h2>
-			</div>
+		<ScrollProps className="show" threshold={1} once={true}>
+			{#snippet children(props)}
+				<div class="accent-title {props.class}">
+					<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+					<h2>Why Us?</h2>
+				</div>
+			{/snippet}
 		</ScrollProps>
 		<div class="why-us__container">
 			<div class="why-us__text">
@@ -128,11 +132,13 @@
 		</div>
 	</section>
 	<section class="the-team">
-		<ScrollProps let:props className="show" threshold={1} once={true}>
-			<div class="accent-title {props.class}">
-				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-				<h2>The Team</h2>
-			</div>
+		<ScrollProps className="show" threshold={1} once={true}>
+			{#snippet children(props)}
+				<div class="accent-title {props.class}">
+					<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+					<h2>The Team</h2>
+				</div>
+			{/snippet}
 		</ScrollProps>
 		<div class="the-team__container">
 			<p>

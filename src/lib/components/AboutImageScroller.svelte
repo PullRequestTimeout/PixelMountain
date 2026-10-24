@@ -2,42 +2,46 @@
 	import { onMount } from "svelte";
 
 	// Programatically generate these two arrays
-	let scrollerArray = [];
+	let scrollerArray: string[] = [];
 	for (let i = 1; i <= 10; i++) {
 		scrollerArray.push(`scroller-${i}.jpg`);
 	}
 
 	let scrollerContainer: HTMLDivElement;
-	let windowInnerHeight = 0;
-	let scrollY = 0;
-	let clientHeight = 0;
-	let containerTop = 0;
-	let containerHeight = 0;
-	let containerBottom = 0;
+	let windowInnerHeight = $state(0);
+	let scrollY = $state(0);
+	let containerTop = $state(0);
+	let containerBottom = $state(0);
 
 	onMount(() => {
 		const updateContainerMetrics = () => {
 			const rect = scrollerContainer.getBoundingClientRect();
 			containerTop = rect.top + window.scrollY;
-			containerHeight = rect.height;
 			containerBottom = rect.bottom;
 		};
 
 		updateContainerMetrics();
 		window.addEventListener("resize", updateContainerMetrics);
 		window.addEventListener("scroll", updateContainerMetrics);
+
+		return () => {
+			window.removeEventListener("resize", updateContainerMetrics);
+			window.removeEventListener("scroll", updateContainerMetrics);
+		};
 	});
 
-	$: scrollAmount = 0;
-
-	$: if (scrollY >= containerBottom - windowInnerHeight) {
-		scrollAmount = (scrollY - containerTop) * 0.2;
-	}
+	// Only updates while the scroller is in view, so it holds its last value otherwise
+	let scrollAmount = $state(0);
+	$effect.pre(() => {
+		if (scrollY >= containerBottom - windowInnerHeight) {
+			scrollAmount = (scrollY - containerTop) * 0.2;
+		}
+	});
 </script>
 
 <svelte:window bind:scrollY bind:innerHeight={windowInnerHeight} />
 
-<div class="scroller-container" bind:clientHeight bind:this={scrollerContainer}>
+<div class="scroller-container" bind:this={scrollerContainer}>
 	<div class="scroller-1" style="translate: {scrollAmount}px 0 ">
 		{#each scrollerArray as image, i}
 			{#if i < 5}

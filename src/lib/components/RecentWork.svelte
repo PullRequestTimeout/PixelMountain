@@ -4,15 +4,17 @@
 	import ScrollProps from "$lib/components/ScrollProps.svelte";
 
 	// Only get the first 3 blog posts
-	$: firstThreeBlogs = blogs.slice(0, 3);
+	let firstThreeBlogs = $derived(blogs.slice(0, 3));
 </script>
 
 <section class="recent-works">
-	<ScrollProps let:props className="show" threshold={1} once={true}>
-		<div class="accent-title {props.class}">
-			<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
-			<h2>What We've Been Up To</h2>
-		</div>
+	<ScrollProps className="show" threshold={1} once={true}>
+		{#snippet children(props)}
+			<div class="accent-title {props.class}">
+				<img src="/assets/vectors/arrow-1.svg" width="40px" alt="arrow right" />
+				<h2>What We've Been Up To</h2>
+			</div>
+		{/snippet}
 	</ScrollProps>
 	<div class="recent-works__container">
 		{#each firstThreeBlogs as blog, i}

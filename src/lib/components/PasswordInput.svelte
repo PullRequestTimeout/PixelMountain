@@ -1,26 +1,27 @@
 <script lang="ts">
 	import Icon from "$lib/components/Icon.svelte";
 
-	export let password = "";
-	export let placeholder = "Password";
-	function passwordInput(e: any) {
-		password = e.target.value;
+	interface Props {
+		password?: string;
+		placeholder?: string;
 	}
 
-	let passwordVisibility = false;
-	$: type = passwordVisibility ? "text" : "password";
+	let { password = $bindable(""), placeholder = "Password" }: Props = $props();
+
+	let passwordVisibility = $state(false);
+	let type = $derived(passwordVisibility ? "text" : "password");
 </script>
 
 <div class="password-input">
 	<label>
-		<input name="password" {type} {placeholder} on:input={passwordInput} class="text-input" />
+		<input name="password" {type} {placeholder} bind:value={password} class="text-input" />
 	</label>
 	{#if password.length > 0}
 		<button
 			class="password-visibility-button"
 			type="button"
 			tabindex="-1"
-			on:click={() => (passwordVisibility = !passwordVisibility)}
+			onclick={() => (passwordVisibility = !passwordVisibility)}
 		>
 			{#if passwordVisibility}
 				<Icon name="hidden" color="--clr-dark-green" size="24" />

@@ -41,7 +41,7 @@
 	<div class="footer__secondary">
 		<div class="legal">
 			<a href="/privacy-policy">Privacy Policy</a>
-			<button on:click={showCookieBanner}>Cookie Disclaimer</button>
+			<button onclick={showCookieBanner}>Cookie Disclaimer</button>
 		</div>
 		<div class="copy">
 			<p>&copy; {year} Pixel Mountain Creative</p>

@@ -9,19 +9,19 @@
 	import { fade, slide } from "svelte/transition";
 
 	type TabType = "landing-page" | "e-commerce" | "multimedia";
-	let currentTab: TabType = "landing-page";
+	let currentTab: TabType = $state("landing-page");
 
 	// Form state
-	let formState = {
+	let formState = $state({
 		modalPage: 1,
 		error: false,
 		errorMessage: "",
 		loading: false,
 		success: false
-	};
+	});
 
 	// Client information for funnel
-	let clientInfo = {
+	let clientInfo = $state({
 		packageName: "",
 		businessName: "",
 		businessIndustry: "",
@@ -29,11 +29,9 @@
 		name: "",
 		email: "",
 		phone: ""
-	};
+	});
 
-	// $: console.log(clientInfo);
-
-	let modalOpen = false;
+	let modalOpen = $state(false);
 	function handleGetStarted(packageName?: string) {
 		modalOpen = true;
 		if (packageName) {
@@ -41,7 +39,8 @@
 		}
 	}
 
-	$: if (!modalOpen) {
+	function closeModal() {
+		modalOpen = false;
 		formState.modalPage = 1;
 		clientInfo = {
 			packageName: "",
@@ -56,7 +55,8 @@
 		formState.errorMessage = "";
 	}
 
-	async function handleFormSubmit() {
+	async function handleFormSubmit(event: SubmitEvent) {
+		event.preventDefault();
 		if (
 			!clientInfo.packageName ||
 			!clientInfo.name ||
@@ -122,19 +122,19 @@
 			<button
 				class="button button-secondary services__button"
 				class:active={currentTab === "landing-page"}
-				on:click={() => (currentTab = "landing-page")}>Landing Page</button
+				onclick={() => (currentTab = "landing-page")}>Landing Page</button
 			>
 
 			<button
 				class="button button-secondary services__button"
 				class:active={currentTab === "e-commerce"}
-				on:click={() => (currentTab = "e-commerce")}>eCommerce</button
+				onclick={() => (currentTab = "e-commerce")}>eCommerce</button
 			>
 
 			<button
 				class="button button-secondary services__button"
 				class:active={currentTab === "multimedia"}
-				on:click={() => (currentTab = "multimedia")}>Multimedia</button
+				onclick={() => (currentTab = "multimedia")}>Multimedia</button
 			>
 		</div>
 
@@ -186,7 +186,7 @@
 							</li>
 						</ul>
 					</div>
-					<button on:click={() => handleGetStarted("essential")} class="button button-primary"
+					<button onclick={() => handleGetStarted("essential")} class="button button-primary"
 						><span>Get Started</span><Icon name="arrow-right" color="#fff" /></button
 					>
 				</div>
@@ -220,7 +220,7 @@
 							</li>
 						</ul>
 					</div>
-					<button on:click={() => handleGetStarted("pro")} class="button button-primary"
+					<button onclick={() => handleGetStarted("pro")} class="button button-primary"
 						><span>Get Started</span><Icon name="arrow-right" color="#fff" /></button
 					>
 				</div>
@@ -253,7 +253,7 @@
 							</li>
 						</ul>
 					</div>
-					<button on:click={() => handleGetStarted("elite")} class="button button-primary"
+					<button onclick={() => handleGetStarted("elite")} class="button button-primary"
 						><span>Get Started</span><Icon name="arrow-right" color="#fff" /></button
 					>
 				</div>
@@ -312,7 +312,7 @@
 						</ul>
 					</div>
 
-					<button on:click={() => handleGetStarted("ecommerce")} class="button button-primary"
+					<button onclick={() => handleGetStarted("ecommerce")} class="button button-primary"
 						><span>Contact Sales</span><Icon name="arrow-right" color="#fff" /></button
 					>
 				</div>
@@ -373,7 +373,7 @@
 						</ul>
 					</div>
 
-					<button on:click={() => handleGetStarted("multimedia")} class="button button-primary"
+					<button onclick={() => handleGetStarted("multimedia")} class="button button-primary"
 						><span>Contact Sales</span><Icon name="arrow-right" color="#fff" /></button
 					>
 				</div>
@@ -399,14 +399,8 @@
 </main>
 {#if modalOpen}
 	<div transition:fade={{ duration: 200 }} class="modal__overlay">
-		<div
-			class="modal__content"
-			use:clickOutside
-			on:outclick={() => {
-				modalOpen = false;
-			}}
-		>
-			<form class="modal__form" on:submit|preventDefault={handleFormSubmit}>
+		<div class="modal__content" use:clickOutside onoutclick={closeModal}>
+			<form class="modal__form" onsubmit={handleFormSubmit}>
 				<h2>Get Started with the <span>{clientInfo.packageName}</span> Package</h2>
 
 				{#if formState.modalPage === 1}
@@ -443,7 +437,7 @@
 					<button
 						type="button"
 						class="button button-primary"
-						on:click={() => {
+						onclick={() => {
 							if (
 								!clientInfo.businessName ||
 								!clientInfo.businessIndustry ||
@@ -496,7 +490,7 @@
 						<button
 							type="button"
 							class="button button-secondary"
-							on:click={() => {
+							onclick={() => {
 								formState.modalPage = 1;
 							}}
 						>
@@ -506,7 +500,7 @@
 							<button
 								type="submit"
 								class="button button-primary"
-								on:click={() => {
+								onclick={() => {
 									if (!clientInfo.name || !clientInfo.email || !clientInfo.phone) {
 										formState.error = true;
 										formState.errorMessage = "Please fill out all fields.";
@@ -543,10 +537,9 @@
 						</p>
 						<button
 							class="button button-primary"
-							on:click={() => {
-								modalOpen = false;
+							onclick={() => {
+								closeModal();
 								formState.success = false;
-								formState.modalPage = 1;
 							}}>Close</button
 						>
 					</div>
@@ -954,8 +947,8 @@
 		}
 
 		.services__item-text-container:not(
-				.services__item.services__item--wide .services__item-text-container
-			) {
+			.services__item.services__item--wide .services__item-text-container
+		) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 2rem;

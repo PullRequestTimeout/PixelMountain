@@ -3,7 +3,8 @@
 	import Map from "$lib/components/Map.svelte";
 
 	// Set by the form action when the email fails to send
-	export let form;
+	/** @type {{ form: import('./$types').ActionData }} */
+	let { form } = $props();
 </script>
 
 <svelte:head>
@@ -89,8 +90,7 @@
 			name="message"
 			value={form?.values?.message ?? ""}
 			placeholder="Your message here..."
-			required
-		></textarea>
+			required></textarea>
 		<!-- Honeypot: hidden from people, bots that fill it are silently dropped -->
 		<div class="contact__honeypot" aria-hidden="true">
 			<label for="website-input">Website</label>

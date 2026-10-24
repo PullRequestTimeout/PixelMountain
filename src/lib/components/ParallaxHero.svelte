@@ -2,39 +2,41 @@
 	import Logo from "./Logo.svelte";
 	import { onMount } from "svelte";
 
-	let windowInnerHeight = 0;
-	let top = 0;
-	let scrollY = 0;
-	let container: any;
-	let containerTop = 0;
-	let containerBottom = 0;
-	let containerHeight = 0;
+	let windowInnerHeight = $state(0);
+	let top = $state(0);
+	let scrollY = $state(0);
+	let container: HTMLElement;
+	let containerTop = $state(0);
+	let containerBottom = $state(0);
+	let containerHeight = $state(0);
 
 	onMount(() => {
-		if (container) {
-			containerTop = container.getBoundingClientRect().top;
-			containerBottom = container.getBoundingClientRect().bottom;
-			containerHeight = container.getBoundingClientRect().height;
-		}
-		window.addEventListener("scroll", () => {
+		const updateContainerMetrics = () => {
 			if (container) {
-				containerTop = container.getBoundingClientRect().top;
-				containerBottom = container.getBoundingClientRect().bottom;
-				containerHeight = container.getBoundingClientRect().height;
+				const rect = container.getBoundingClientRect();
+				containerTop = rect.top;
+				containerBottom = rect.bottom;
+				containerHeight = rect.height;
 			}
-		});
-		window.addEventListener("resize", () => {
-			if (container) {
-				containerTop = container.getBoundingClientRect().top;
-				containerBottom = container.getBoundingClientRect().bottom;
-				containerHeight = container.getBoundingClientRect().height;
-			}
-		});
+		};
+
+		updateContainerMetrics();
+		window.addEventListener("scroll", updateContainerMetrics);
+		window.addEventListener("resize", updateContainerMetrics);
+
+		return () => {
+			window.removeEventListener("scroll", updateContainerMetrics);
+			window.removeEventListener("resize", updateContainerMetrics);
+		};
 	});
 
-	$: if (containerTop < windowInnerHeight && containerBottom > 0) {
-		top = (((containerTop - windowInnerHeight) * -1) / (containerHeight + windowInnerHeight)) * 50;
-	}
+	// Only updates while the hero is in view, so it holds its last value otherwise
+	$effect.pre(() => {
+		if (containerTop < windowInnerHeight && containerBottom > 0) {
+			top =
+				(((containerTop - windowInnerHeight) * -1) / (containerHeight + windowInnerHeight)) * 50;
+		}
+	});
 </script>
 
 <svelte:window bind:scrollY bind:innerHeight={windowInnerHeight} />

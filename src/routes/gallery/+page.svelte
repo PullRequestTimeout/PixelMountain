@@ -2,29 +2,28 @@
 	import Icon from "$lib/components/Icon.svelte";
 
 	let imageNumber = 82;
-	let lightboxOpen = false;
-	let currentImage = 0;
-	$: if (!lightboxOpen) {
+	let lightboxOpen = $state(false);
+	let currentImage = $state(0);
+
+	function closeLightbox() {
+		lightboxOpen = false;
 		currentImage = 0;
 	}
 
-	// Add event listeners for keyboard navigation while lightbox is open
+	// Keyboard navigation while the lightbox is open
 	const handleKeydown = (event: KeyboardEvent) => {
+		if (!lightboxOpen) return;
 		if (event.key === "ArrowRight") {
 			currentImage = (currentImage + 1) % imageNumber;
 		} else if (event.key === "ArrowLeft") {
 			currentImage = (currentImage - 1 + imageNumber) % imageNumber;
 		} else if (event.key === "Escape") {
-			lightboxOpen = false;
+			closeLightbox();
 		}
 	};
-
-	$: if (lightboxOpen) {
-		window.addEventListener("keydown", handleKeydown);
-	} else {
-		window.removeEventListener("keydown", handleKeydown);
-	}
 </script>
+
+<svelte:window onkeydown={handleKeydown} />
 
 <svelte:head>
 	<title>Gallery | Pixel Mountain Creative</title>
@@ -49,7 +48,7 @@
 		{#each Array(imageNumber) as _, i}
 			<button
 				class="gallery-item"
-				on:click={() => {
+				onclick={() => {
 					lightboxOpen = true;
 					currentImage = i;
 				}}
@@ -64,22 +63,18 @@
 				src={`/assets/images/gallery/${String(currentImage + 1)}.jpg`}
 				alt={`Gallery image ${currentImage + 1}`}
 			/>
-			<button
-				class="lightbox-close"
-				aria-label="Close lightbox"
-				on:click={() => {
-					lightboxOpen = false;
-				}}><Icon name="close" color="white" size="32" /></button
+			<button class="lightbox-close" aria-label="Close lightbox" onclick={closeLightbox}
+				><Icon name="close" color="white" size="32" /></button
 			>
 			<button
 				class="lightbox-next"
-				on:click={() => {
+				onclick={() => {
 					currentImage = (currentImage + 1) % imageNumber;
 				}}><Icon name="arrow-right" color="white" size="32" /></button
 			>
 			<button
 				class="lightbox-prev"
-				on:click={() => {
+				onclick={() => {
 					currentImage = (currentImage - 1 + imageNumber) % imageNumber;
 				}}><Icon name="arrow-left" color="white" size="32" /></button
 			>

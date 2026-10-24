@@ -1,16 +1,15 @@
 <script lang="ts">
-	export let name = "";
-	export let color = "--color-white";
-	export let size = "24";
-
-	let inputColor;
-	switch (color) {
-		default:
-			inputColor = color;
-			break;
+	interface Props {
+		name?: string;
+		color?: string;
+		size?: string;
 	}
 
-	let icons = [
+	let { name = "", color = "--color-white", size = "24" }: Props = $props();
+
+	let inputColor = $derived(color);
+
+	let icons = $derived([
 		{
 			name: "add",
 			svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width=${size} fill=${inputColor}><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>`
@@ -107,9 +106,9 @@
 		// 	name: "",
 		// 	svg: ``
 		// }
-	];
+	]);
 
-	let displayIcon = icons.find((e) => e.name === name);
+	let displayIcon = $derived(icons.find((e) => e.name === name));
 </script>
 
 {#if displayIcon}

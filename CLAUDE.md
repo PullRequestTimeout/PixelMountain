@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Marketing site for Pixel Mountain Creative (pixelmountain.ca), a web/digital media agency. SvelteKit 2 + **Svelte 4** (not Svelte 5: use `export let`, `$:`, `<slot />`, stores; no runes) with TypeScript, deployed to Netlify.
+Marketing site for Pixel Mountain Creative (pixelmountain.ca), a web/digital media agency. SvelteKit 2 + **Svelte 5 in runes mode** with TypeScript, deployed to Netlify (Vite 5, `@sveltejs/vite-plugin-svelte` 4, Node 22 pinned in `netlify.toml`).
+
+Svelte 5 conventions: props via `let { … }: Props = $props()`, local reactive values via `$state` / `$derived` (prefer event handlers or `$derived` over `$effect`), `onclick`-style event attributes (no `on:` directives or modifiers), snippets and `{@render children?.()}` instead of `<slot>`, and no imports from `svelte/legacy`. `bind:this` targets that are only read in `onMount` stay plain `let`. The `cookieBanner` store in `src/lib/stores/uiStore.ts` is deliberately kept as a store. `ScrollProps.svelte` passes its animation class to a `children(props)` snippet (`{#snippet children(props)}<div class={props.class}>…{/snippet}`). The `clickOutside` action (`src/lib/utils/click_outside.ts`) dispatches an `outclick` event, which is handled with `onoutclick`.
 
 ## Commands
 

@@ -3,6 +3,7 @@
 	import ClassNames from "embla-carousel-class-names";
 	import { setupTweenOpacity } from "$lib/utils/tweenOpacity.js";
 	import Autoplay from "embla-carousel-autoplay";
+	import type { EmblaCarouselType } from "embla-carousel";
 
 	type Slide = {
 		image: string;
@@ -36,12 +37,13 @@
 		}
 	};
 
-	let emblaApi: any;
+	// Raw state so Embla's API object isn't wrapped in a deep proxy
+	let emblaApi = $state.raw<EmblaCarouselType>();
 	const options = { loop: true, duration: 60 };
-	let plugins = [ClassNames(), Autoplay({ delay: 10000 })];
-	let resize: number;
+	const plugins = [ClassNames(), Autoplay({ delay: 10000 })];
+	let resize = $state<number>();
 
-	const onInit = (event: any) => {
+	const onInit = (event: CustomEvent<EmblaCarouselType>) => {
 		emblaApi = event.detail;
 		const { applyTweenOpacity, removeTweenOpacity } = setupTweenOpacity(emblaApi);
 		emblaApi
@@ -54,7 +56,7 @@
 
 <!-- rerender component on window resize to stop carousel items from disappearring -->
 <svelte:window
-	on:resize={() => {
+	onresize={() => {
 		setTimeout(() => {
 			resize = window.innerWidth;
 		}, 500);
@@ -62,7 +64,7 @@
 />
 
 {#key resize}
-	<section class="embla" use:emblaCarouselSvelte={{ options, plugins }} on:emblaInit={onInit}>
+	<section class="embla" use:emblaCarouselSvelte={{ options, plugins }} onemblaInit={onInit}>
 		<div class="embla__container">
 			{#each Object.keys(slides) as slide}
 				<div class="embla__slide">
@@ -82,12 +84,16 @@
 				</div>
 			{/each}
 		</div>
-		<button class="embla__prev" on:click={emblaApi.scrollPrev} aria-label="Carousel Previous">
+		<button
+			class="embla__prev"
+			onclick={() => emblaApi?.scrollPrev()}
+			aria-label="Carousel Previous"
+		>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
 				><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" /></svg
 			></button
 		>
-		<button class="embla__next" on:click={emblaApi.scrollNext} aria-label="Carousel Next">
+		<button class="embla__next" onclick={() => emblaApi?.scrollNext()} aria-label="Carousel Next">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
 				><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" /></svg
 			></button
